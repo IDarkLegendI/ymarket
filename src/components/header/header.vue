@@ -4,6 +4,7 @@
     <div class="part">
       <ButtonPopUp msg="Каталог" />
       <SearchHeader />
+      <Nav></Nav>
     </div>
   </header>
 </template>
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import SearchHeader from "./searchHeader.vue";
 import ButtonPopUp from "../buttons/buttonPopUp.vue";
+import Nav from "./nav/nav.vue";
 </script>
 
 <style scoped>
