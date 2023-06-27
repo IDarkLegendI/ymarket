@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import SearchHeader from "./SearchHeader.vue";
-import ButtonPopUp from "../Buttons/ButtonPopUp.vue";
+import SearchHeader from "./searchHeader.vue";
+import ButtonPopUp from "../buttons/buttonPopUp.vue";
 </script>
 
 <style scoped>

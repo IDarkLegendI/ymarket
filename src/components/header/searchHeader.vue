@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from "../Buttons/Button.vue";
+import Button from "../buttons/button.vue";
 </script>
 
 <style scoped>
