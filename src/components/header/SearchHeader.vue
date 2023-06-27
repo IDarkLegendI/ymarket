@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import Button from "../Button.vue";
-import ButtonPopUp from "../ButtonPopUp.vue";
+import Button from "../Buttons/Button.vue";
+import ButtonPopUp from "../Buttons/ButtonPopUp.vue";
 </script>
 
 <style scoped>
