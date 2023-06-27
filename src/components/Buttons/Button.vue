@@ -42,6 +42,6 @@ button:active{
 }
 
 .msgText {
-  padding-left: 12px;
+  //padding-left: 12px;
 }
 </style>

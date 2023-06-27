@@ -23,6 +23,7 @@ defineProps<{
   height: 20px;
   padding: 1px 0;
   box-sizing: border-box;
+  margin-right: 12px;
 }
 .line
 {
