@@ -23,7 +23,7 @@ import Button from "../buttons/button.vue";
 .search-box input{
   height: 100%;
   border-color: #F5C400;
-  padding: 2px 0;
+  width: 28vw;
 }
 .search-box input:focus{
   outline: none;

@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; flex-direction: column; align-items: center">
+  <div style="display: flex; flex-direction: column; align-items: center; margin: 0 .7vw; cursor: pointer">
     <slot></slot>
     <div class="text">
       {{text}}
