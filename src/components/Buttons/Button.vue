@@ -1,5 +1,5 @@
 <template>
-  <button :class="buy ? 'buyBtn' : ''">
+  <button>
     <div style="display: flex; align-items: center">
       <slot></slot>
       <div class="msgText">{{ msg }}</div>
@@ -10,7 +10,6 @@
 <script setup lang="ts">
 defineProps<{
   msg: string,
-  buy?: boolean
 }>()
 </script>
 
@@ -26,22 +25,10 @@ button{
   cursor: pointer;
   transition: all .2s;
 }
-.buyBtn {
-  width: 100%;
-  padding: 1vh 0;
-}
 button:hover{
   background-color: #dbaf02
 }
 button:active{
   padding: .8vh .8vw;
-}
-.buyBtn:active{
-  width: 80%;
-  padding: .8vh 0;
-}
-
-.msgText {
-  //padding-left: 12px;
 }
 </style>

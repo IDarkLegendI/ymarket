@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <ButtonPopUp msg="Каталог" />
     <div class="search-box">
       <input type="text" placeholder="Искать товары">
       <Button msg="Найти" />
@@ -10,7 +9,6 @@
 
 <script setup lang="ts">
 import Button from "../Buttons/Button.vue";
-import ButtonPopUp from "../Buttons/ButtonPopUp.vue";
 </script>
 
 <style scoped>
@@ -25,6 +23,7 @@ import ButtonPopUp from "../Buttons/ButtonPopUp.vue";
 .search-box input{
   height: 100%;
   border-color: #F5C400;
+  padding: 2px 0;
 }
 .search-box input:focus{
   outline: none;
