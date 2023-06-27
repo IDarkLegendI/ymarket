@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <Button msg="Каталог" />
+    <ButtonPopUp msg="Каталог" />
     <div class="search-box">
       <input type="text" placeholder="Искать товары">
       <Button msg="Найти" />
@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import Button from "../Button.vue";
+import ButtonPopUp from "../ButtonPopUp.vue";
 </script>
 
 <style scoped>

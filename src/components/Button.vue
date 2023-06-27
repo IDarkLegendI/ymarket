@@ -1,5 +1,10 @@
 <template>
-  <button :class="buy ? 'buyBtn' : ''">{{ msg }}</button>
+  <button :class="buy ? 'buyBtn' : ''">
+    <div style="display: flex; align-items: center">
+      <slot></slot>
+      <div class="msgText">{{ msg }}</div>
+    </div>
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -34,5 +39,9 @@ button:active{
 .buyBtn:active{
   width: 80%;
   padding: .8vh 0;
+}
+
+.msgText {
+  padding-left: 12px;
 }
 </style>
