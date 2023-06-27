@@ -10,6 +10,9 @@ defineProps<{
 </script>
 
 <style scoped>
+* {
+  font-weight: 700;
+}
 button{
   background-color: #F5C400;
   border-radius: 5px;
