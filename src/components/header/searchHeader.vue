@@ -17,13 +17,15 @@ import Button from "../buttons/button.vue";
 .main{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: center;
 }
 .search-box{
   display: flex;
-  margin-left: 1vw;
+  margin-left: 0.63vw;
   height: 44px;
+  width: 100%;
+  margin-right: 1.67vw;
 }
 .search-box input{
   font-family: inherit;

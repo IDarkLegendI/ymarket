@@ -18,6 +18,11 @@ defineProps<{
 </script>
 
 <style scoped>
+button {
+  padding: 12px 16px 12px 14px;
+  height: 44px;
+  margin: 0;
+}
 .lines {
   width: 1vw;
   height: 2vh;
