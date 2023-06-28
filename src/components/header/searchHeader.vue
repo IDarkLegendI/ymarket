@@ -1,8 +1,10 @@
 <template>
   <div class="main">
     <div class="search-box">
-      <input type="text" placeholder="Искать товары">
-      <Button msg="Найти" />
+      <div style="width: 100%">
+        <input type="text" placeholder="Искать товары">
+      </div>
+      <Button msg="Найти"/>
     </div>
   </div>
 </template>
@@ -16,19 +18,38 @@ import Button from "../buttons/button.vue";
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .search-box{
+  display: flex;
   margin-left: 1vw;
+  height: 44px;
 }
 .search-box input{
-  height: 100%;
-  border-color: #F5C400;
-  padding: 2px 0;
+  font-family: inherit;
+  /* color: #222; */
+  /* z-index: 3; */
+  width: 100%;
+  margin: 0;
+  vertical-align: top;
+  font-size: 100%;
+  outline: none;
+  background: transparent;
+  -webkit-tap-highlight-color: #222;
+  -webkit-appearance: none;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  padding: 0 36px 0 16px;
+  border: 2px solid #fc0;
+  border-right-width: 0;
+  border-radius: 3px 0 0 3px;
+  background-clip: padding-box;
 }
 .search-box input:focus{
   outline: none;
 }
 .search-box Button{
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 7px 7px 0;
 }
 </style>

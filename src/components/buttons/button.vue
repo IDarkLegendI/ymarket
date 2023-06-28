@@ -18,12 +18,20 @@ defineProps<{
   font-weight: 700;
 }
 button{
-  background-color: #F5C400;
-  border-radius: 5px;
+  border-radius: 7px;
   padding: 1vh 1vw;
-  border: none;
   cursor: pointer;
   transition: all .2s;
+  position: relative;
+  flex-shrink: 0;
+  outline: none;
+  color: #212121;
+  background-color: #fc0;
+  font-size: 16px;
+  line-height: 20px;
+  height: auto;
+  border: none;
+  font-weight: 500;
 }
 button:hover{
   background-color: #dbaf02
