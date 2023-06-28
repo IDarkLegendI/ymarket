@@ -1,11 +1,13 @@
 <template>
-  <div style="display: flex; flex-direction: column; align-items: center; margin: 0 .7vw; cursor: pointer; position: relative">
-    <slot></slot>
+  <div style="display: flex; flex-direction: column; align-items: center; margin: 0 .7vw; cursor: pointer;">
+    <div style="position: relative">
+      <slot></slot>
+      <div class="notify">
+        {{num}}
+      </div>
+    </div>
     <div class="text">
       {{text}}
-    </div>
-    <div class="notify">
-      {{num}}
     </div>
   </div>
 </template>
