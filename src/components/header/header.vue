@@ -66,6 +66,7 @@ header {
   flex-grow: 1;
 }
 .searchYes .overlay{
+  transition: all .2s;
   position: absolute;
   width: 100%;
   height: 100%;

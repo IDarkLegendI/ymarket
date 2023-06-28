@@ -52,6 +52,7 @@ const inputFocusDestroy = () => {
   border-right-width: 0;
   border-radius: 3px 0 0 3px;
   background-clip: padding-box;
+  transition: all .2s;
 }
 .search-box input:focus{
   outline: none;
