@@ -2,7 +2,7 @@
   <div class="main">
     <div class="search-box">
       <div style="width: 100%">
-        <input type="text" placeholder="Искать товары">
+        <input type="text" @focus="inputFocus" @blur="inputFocusDestroy" placeholder="Искать товары">
       </div>
       <Button msg="Найти"/>
     </div>
@@ -11,14 +11,21 @@
 
 <script setup lang="ts">
 import Button from "../buttons/button.vue";
+import {ref} from "vue";
+const inputFocus = () => {
+  document.body.classList.add('searchYes')
+}
+const inputFocusDestroy = () => {
+  document.body.classList.remove('searchYes')
+}
 </script>
 
 <style scoped>
 .main{
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 .search-box{
   display: flex;
@@ -29,8 +36,6 @@ import Button from "../buttons/button.vue";
 }
 .search-box input{
   font-family: inherit;
-  /* color: #222; */
-  /* z-index: 3; */
   width: 100%;
   margin: 0;
   vertical-align: top;
@@ -54,5 +59,12 @@ import Button from "../buttons/button.vue";
 .search-box Button{
   border-radius: 0 7px 7px 0;
   padding: 12px 16px;
+}
+.searchYes .search-box Button {
+  border: 2px solid white;
+}
+.searchYes .search-box input {
+  border: 2px solid white;
+  background-color: #fff;
 }
 </style>

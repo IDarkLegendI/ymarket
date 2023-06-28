@@ -30,7 +30,7 @@ button{
   font-size: 16px;
   line-height: 20px;
   height: auto;
-  border: none;
+  border: 2px solid #fc0;
   font-weight: 500;
 }
 button:hover{

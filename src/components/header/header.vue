@@ -10,6 +10,7 @@
           <ButtonPopUp msg="Каталог" class="ButtonPopUp"></ButtonPopUp>
           <SearchHeader class="SearchHeader"></SearchHeader>
           <Nav></Nav>
+          <div class="overlay"></div>
         </div>
       </div>
     </div>
@@ -25,7 +26,6 @@ import Button from "../buttons/button.vue";
 
 <style scoped>
 header {
-  position: relative;
   top: unset;
   z-index: 2000;
 }
@@ -64,5 +64,15 @@ header {
   display: flex;
   position: relative;
   flex-grow: 1;
+}
+.searchYes .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 </style>
