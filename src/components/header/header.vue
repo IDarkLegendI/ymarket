@@ -4,8 +4,8 @@
     <div class="part">
       <ButtonPopUp msg="Каталог" />
       <SearchHeader />
-      <Nav></Nav>
     </div>
+    <Nav></Nav>
   </header>
 </template>
 
@@ -21,7 +21,7 @@ header {
   height: 7vh;
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
 }
 .logo {
@@ -40,6 +40,5 @@ header {
 .part{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 </style>
