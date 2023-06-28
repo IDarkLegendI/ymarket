@@ -53,5 +53,6 @@ import Button from "../buttons/button.vue";
 }
 .search-box Button{
   border-radius: 0 7px 7px 0;
+  padding: 12px 16px;
 }
 </style>
