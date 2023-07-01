@@ -18,7 +18,7 @@
 <script setup lang="ts">
 defineProps<{
   link: string,
-  background: string|null
+  background?: string
 }>()
 </script>
 
