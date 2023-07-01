@@ -13,6 +13,7 @@
           <div class="overlay"></div>
         </div>
       </div>
+      <Tabs></Tabs>
     </div>
   </header>
 </template>
@@ -22,6 +23,7 @@ import SearchHeader from "./searchHeader.vue";
 import ButtonPopUp from "../buttons/buttonPopUp.vue";
 import Nav from "./nav/nav.vue";
 import Button from "../buttons/button.vue";
+import Tabs from "./tabs/tabs.vue";
 </script>
 
 <style scoped>
