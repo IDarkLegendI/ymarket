@@ -2,11 +2,11 @@
   <li>
     <div>
       <div class="liTab"
-           :style="`background-image:url(${background.url})`"
-           :class="{backgroundActive: background.toggle}">
-        <a :href="link" class="aTab"
-           :class="{aTabWithBackground: background.toggle}">
-          <span class="textTab">
+           :style="`background-image:url(${background})`"
+           :class="{backgroundActive: background}">
+        <a :href="link" class="aTab">
+          <span class="textTab"
+                :class="{textInvisibleTab: background}">
             <slot></slot>
           </span>
         </a>
@@ -18,13 +18,8 @@
 <script setup lang="ts">
 defineProps<{
   link: string,
-  // background: {
-  //   toggle: boolean,
-  //   url: string
-  // }
-  // Костыль
+  background: string|null
 }>()
-let background = {toggle: false, url: ''} // Костыль
 </script>
 
 <style scoped>
@@ -47,7 +42,6 @@ let background = {toggle: false, url: ''} // Костыль
   font-style: normal;
   font-stretch: normal;
   text-decoration: none;
-  color: #000;
   line-height: 48px;
   display: inline-block;
   transition: color .3s;
@@ -55,10 +49,6 @@ let background = {toggle: false, url: ''} // Костыль
   flex-grow: 1;
   outline: 0;
   position: relative;
-}
-
-.aTabWithBackground {
-  color: white;
 }
 
 .liTab:hover .textTab {
@@ -71,6 +61,10 @@ let background = {toggle: false, url: ''} // Костыль
   text-overflow: ellipsis;
   position: relative;
   top: -2px;
+}
+
+.textInvisibleTab {
+  opacity: 0;
 }
 .backgroundActive
 {
