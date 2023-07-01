@@ -2,11 +2,11 @@
   <li>
     <div>
       <div class="liTab"
-           :style="`background-image:url(${background})`"
-           :class="{backgroundActive: background}">
+           :style="`background-image:url(${background.url})`"
+           :class="{backgroundActive: background.toggle}">
         <a :href="link" class="aTab">
           <span class="textTab"
-                :class="{textInvisibleTab: background}">
+                :class="{textInvisibleTab: background.toggle}">
             <slot></slot>
           </span>
         </a>
@@ -15,11 +15,23 @@
   </li>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  link: string,
-  background?: string
-}>()
+<script lang="ts">
+export default {
+  props: {
+    background: {
+      type: <{toggle: boolean, url: string}>Object,
+      required: false,
+      default: {toggle: false, url: ''}
+    },
+    link: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {}
+  }
+};
 </script>
 
 <style scoped>

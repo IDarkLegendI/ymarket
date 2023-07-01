@@ -11,7 +11,8 @@
           </div>
         </button>
         <ul class="tab">
-          <li-tab link="/special/leto2023" class="sale" background="//avatars.mds.yandex.net/get-marketcms/475644/img-5dde2433-87d8-4132-b66a-48ee442d2398.gif/orig">Распродажа</li-tab>
+<!--          <li-tab link="/special/leto2023" class="sale" background="//avatars.mds.yandex.net/get-marketcms/475644/img-5dde2433-87d8-4132-b66a-48ee442d2398.gif/orig">Распродажа</li-tab>-->
+          <li-tab link="/special/leto2023" class="sale" :background="{toggle: true, url: '//avatars.mds.yandex.net/get-marketcms/475644/img-5dde2433-87d8-4132-b66a-48ee442d2398.gif/orig'}">Распродажа</li-tab>
           <li-tab link="/special/iherb/">iHerb</li-tab>
           <li-tab link="">Алиса</li-tab>
           <li-tab link="">ИКЕА</li-tab>
@@ -33,7 +34,6 @@
 </template>
 
 <script setup lang="ts">
-
 import LiTab from "./liTab.vue";
 </script>
 
