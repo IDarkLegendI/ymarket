@@ -24,20 +24,23 @@ button {
   margin: 0;
 }
 .lines {
-  width: 1vw;
-  height: 2vh;
+  width: 20px;
+  height: 20px;
   padding: 1px 0;
   box-sizing: border-box;
-  margin-right: .8vw;
+  margin-right: 8px;
 }
 .line
 {
   position: relative;
   display: block;
-  width: 100%;
-  height: .2vh;
+  width: 18px;
+  height: 2px;
   transition: transform .3s,background-color .3s;
   background-color: #000;
   margin: 3px 0;
+}
+.line:not(:first-child) {
+  margin-top: 3px;
 }
 </style>
