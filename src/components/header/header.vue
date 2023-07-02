@@ -10,10 +10,10 @@
           <ButtonPopUp msg="Каталог" class="ButtonPopUp"></ButtonPopUp>
           <SearchHeader class="SearchHeader"></SearchHeader>
           <Nav></Nav>
-          <div class="overlay"></div>
         </div>
       </div>
       <Tabs></Tabs>
+      <div class="overlay"></div>
     </div>
   </header>
 </template>

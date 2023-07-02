@@ -101,7 +101,7 @@ body, li, ol, td, th, ul {
   box-shadow: 0 2px 3px 0 rgba(0,0,0,.06);
   margin-top: -10px;
   margin-bottom: 18px;
-  z-index: 101;
+  z-index: 0;
 }
 
 @media (min-width: 1200px)
