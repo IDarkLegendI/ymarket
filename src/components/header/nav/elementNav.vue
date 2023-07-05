@@ -2,23 +2,24 @@
   <div style="display: flex; flex-direction: column; align-items: center; margin: 0 .7vw; cursor: pointer;">
     <div style="position: relative">
       <slot></slot>
-      <div class="notify">
-        {{num}}
+      <div class="notify" v-if="notify.toggle">
+        {{notify.value}}
       </div>
     </div>
     <div class="text">
-      {{text}}
+      {{props.text}}
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import {ref} from "vue";
-
-defineProps<{
+<script lang="ts" setup>
+import {reactive} from "vue";
+interface iProps {
   text: string,
-}>()
-const num = ref(5)
+  notify: { toggle: boolean,  value: number|null}
+}
+const props = <iProps>defineProps({text: String, notify: Object})
+const notify = reactive(props.notify)
 </script>
 
 <style scoped>
