@@ -73,7 +73,7 @@ export default {
   text-overflow: ellipsis;
   position: relative;
   top: -2px;
-  font-size: 12.8px;
+  font-size: 14px;
 }
 
 .textInvisibleTab {

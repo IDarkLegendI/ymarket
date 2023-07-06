@@ -87,7 +87,7 @@ import LiTab from "./liTab.vue";
   width: 140px;
   position: relative;
   top: -2px;
-  font-size: 12.8px;
+  font-size: 14px;
 }
 ul {
   list-style: none;
@@ -130,7 +130,7 @@ body, li, ol, td, th, ul {
 }
 
 .secondTab {
-  margin-left: 10px;
+  margin-left: 60px;
   margin-right: -12px;
   flex-shrink: 0;
 }
