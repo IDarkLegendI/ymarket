@@ -2,9 +2,9 @@
   <div style="display: flex; flex-direction: column; align-items: center; margin: 0 .7vw; cursor: pointer;">
     <div style="position: relative">
       <slot></slot>
-      <div class="notify" v-if="notify.toggle">
+      <span class="notify" v-if="notify.toggle" :class="`notify-${notify.size}`">
         {{notify.value}}
-      </div>
+      </span>
     </div>
     <div class="text">
       {{props.text}}
@@ -16,7 +16,7 @@
 import {reactive} from "vue";
 interface iProps {
   text: string,
-  notify: { toggle: boolean,  value: number|null}
+  notify: { toggle: boolean,  value: number, size: 's'|'m'|'d'} // s - small(10px), m - medium(12px), d - default
 }
 const props = <iProps>defineProps({text: String, notify: Object})
 const notify = reactive(props.notify)
@@ -37,15 +37,32 @@ const notify = reactive(props.notify)
   background-color: #ff0000;
   border-radius: 18px;
   border: 2px solid white;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  box-sizing: border-box;
+  color: white;
+}
+
+.notify-d {
   min-width: 18px;
   height: 18px;
   top: -5px;
-  font-size: 10px;
-  line-height: 14px;
   left: calc(100% - 15px);
-  text-align: center;
   padding: 0 4px;
-  box-sizing: border-box;
-  color: white;
+}
+
+.notify-m {
+  width: 14px;
+  height: 14px;
+  top: -1px;
+  left: 33px;
+}
+
+.notify-s {
+  width: 12px;
+  height: 12px;
+  top: -5px;
+  left: 50px;
 }
 </style>
