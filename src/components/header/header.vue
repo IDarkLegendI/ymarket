@@ -2,7 +2,7 @@
   <header>
     <div style="align-items: center; box-sizing: border-box; background: #fff;">
       <div style="width: calc(100% - 80px); min-width: 1024px; padding: 0 25px; margin: 0 auto; max-width: 1456px;
-                  display: flex; height: 72px">
+                  display: flex; height: 72px;">
         <div class="divLogo">
           <div class="logo"></div>
         </div>
@@ -78,4 +78,5 @@ header {
   z-index: 1;
   cursor: pointer;
 }
+
 </style>
