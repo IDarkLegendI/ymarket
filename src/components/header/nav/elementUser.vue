@@ -8,10 +8,11 @@
 </template>
 
 <style scoped>
-.main{
+.main {
   width: 500px;
   height: 500px;
   background-color: red;
   position: absolute;
+  z-index: 1;
 }
 </style>
