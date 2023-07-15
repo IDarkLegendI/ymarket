@@ -9,10 +9,15 @@
 
 <style scoped>
 .main {
-  width: 500px;
+  width: 250px;
   height: 500px;
   background-color: red;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
+  right: -5px;
+  top: -5px;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
 }
 </style>

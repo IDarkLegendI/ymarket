@@ -13,7 +13,7 @@
         </div>
       </div>
       <Tabs></Tabs>
-      <div class="overlay"></div>
+      <div class="overlay" @click="inputFocusDestroy"></div>
     </div>
   </header>
 </template>
@@ -24,6 +24,9 @@ import ButtonPopUp from "../buttons/buttonPopUp.vue";
 import Nav from "./nav/nav.vue";
 import Button from "../buttons/button.vue";
 import Tabs from "./tabs/tabs.vue";
+const inputFocusDestroy = () => {
+  document.body.classList.remove('searchYes', 'userMenuYes')
+}
 </script>
 
 <style scoped>
@@ -76,6 +79,17 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
+  cursor: pointer;
+}
+.userMenuYes .overlay{
+  transition: all .2s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+  top: 0;
+  left: 0;
+  z-index: 2;
   cursor: pointer;
 }
 
