@@ -1,16 +1,19 @@
 <template>
-  <button>
+  <button :class="props.hoverClass">
     <div style="display: flex; align-items: center">
       <slot></slot>
-      <div class="msgText">{{ msg }}</div>
+      <div class="msgText">{{ props.msg }}</div>
     </div>
   </button>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+interface iProps {
   msg: string,
-}>()
+  hoverClass: string
+}
+
+const props = <iProps>defineProps({msg: String, hoverClass: String})
 </script>
 
 <style scoped>
@@ -37,6 +40,14 @@ button:hover{
   background-color: #dbaf02
 }
 button:active{
-  padding: .8vh .8vw;
+  background-color: #e8ba00;
+  transform: scale(.97);
+}
+.buttonFind {
+  border: none;
+}
+.buttonFind:hover {
+  background-color: #fae436;
+  border: none;
 }
 </style>

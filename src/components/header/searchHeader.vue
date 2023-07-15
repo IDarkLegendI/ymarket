@@ -4,7 +4,7 @@
       <div style="width: 100%">
         <input type="text" @focus="inputFocus" @blur="inputFocusDestroy" placeholder="Искать товары">
       </div>
-      <Button msg="Найти"/>
+      <Button msg="Найти" hoverClass="buttonFind" />
     </div>
   </div>
 </template>
