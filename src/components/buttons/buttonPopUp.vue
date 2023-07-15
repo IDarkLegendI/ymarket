@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex">
-    <Button :msg="msg">
+    <Button :msg="props.msg" :class="opened ? 'opened' : ''" @click="buttonToggle">
       <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -12,9 +12,17 @@
 
 <script setup lang="ts">
 import Button from "./button.vue";
-defineProps<{
+import {ref} from "vue";
+interface iProps {
   msg: string,
-}>()
+  opened: boolean
+}
+const props = <iProps>defineProps({msg: String, opened: Boolean})
+const opened = ref(props.opened)
+function buttonToggle()
+{
+  opened.value = !opened.value
+}
 </script>
 
 <style scoped>
@@ -42,5 +50,17 @@ button {
 }
 .line:not(:first-child) {
   margin-top: 3px;
+}
+.opened .line:first-child {
+  transform: translateY(5px) translateZ(0) rotate(45deg);
+}
+
+.opened .line:nth-child(2) {
+  transition: opacity .3s;
+  opacity: 0;
+}
+
+.opened .line:nth-child(3) {
+  transform: translateY(-5px) translateZ(0) rotate(-45deg);
 }
 </style>
