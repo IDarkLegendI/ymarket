@@ -75,7 +75,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .2);
   top: 0;
   left: 0;
   z-index: 1;
@@ -86,7 +86,7 @@ header {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .4);
   top: 0;
   left: 0;
   z-index: 2;
