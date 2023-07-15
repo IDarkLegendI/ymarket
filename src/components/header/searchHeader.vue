@@ -11,7 +11,6 @@
 
 <script setup lang="ts">
 import Button from "../buttons/button.vue";
-import {ref} from "vue";
 const inputFocus = () => {
   document.body.classList.add('searchYes')
 }

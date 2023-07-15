@@ -43,9 +43,12 @@ button:active{
   background-color: #e8ba00;
   transform: scale(.97);
 }
+
+/*noinspection CssUnusedSymbol*/
 .buttonFind {
   border: none;
 }
+/*noinspection CssUnusedSymbol*/
 .buttonFind:hover {
   background-color: #fae436;
   border: none;
