@@ -1,20 +1,23 @@
 <template>
-  <div>
+  <DialogCatalog v-show="catalog"></DialogCatalog>
+  <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">
 
   </div>
 </template>
 
 <script lang="ts">
-import {ref} from "vue";
-export default function useDialog() {
-  const catalogPopUp = ref(false)
-  function buttonToggle()
-  {
-    catalogPopUp.value = !catalogPopUp.value
-  }
-  return {
-    catalogPopUp,
-    buttonToggle
+import DialogCatalog from "./dialogCatalog.vue";
+import {provide, ref} from "vue";
+export default {
+  components: {
+    DialogCatalog
+  },
+  setup() {
+    const catalog = ref(false)
+    provide('catalog', catalog)
+    return {
+      catalog
+    }
   }
 }
 </script>
