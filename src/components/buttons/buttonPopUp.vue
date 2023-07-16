@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex">
-    <Button :msg="props.msg" :class="opened ? 'opened' : ''" @click="buttonToggle">
+    <Button :msg="props.msg" :class="opened ? 'opened' : ''" @click="buttonToggle()">
       <div class="lines">
         <div class="line"></div>
         <div class="line"></div>
@@ -13,16 +13,14 @@
 <script setup lang="ts">
 import Button from "./button.vue";
 import {ref} from "vue";
+import useDialog from "../dialog/dialogAPI.vue";
 interface iProps {
   msg: string,
   opened: boolean
 }
+const { catalogPopUp, buttonToggle } = useDialog()
 const props = <iProps>defineProps({msg: String, opened: Boolean})
-const opened = ref(props.opened)
-function buttonToggle()
-{
-  opened.value = !opened.value
-}
+const opened = ref(catalogPopUp)
 </script>
 
 <style scoped>
