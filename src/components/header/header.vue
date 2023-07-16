@@ -14,10 +14,6 @@
       </div>
       <Tabs></Tabs>
       <div class="overlay" @click="inputFocusDestroy"></div>
-      <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-if="openedCatalog">
-
-      </div>
-      <DialogCatalog v-if="openedCatalog"></DialogCatalog>
     </div>
   </header>
 </template>
