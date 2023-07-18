@@ -90,7 +90,7 @@ header {
   top: 0;
   left: 0;
   z-index: 2;
-  cursor: pointer;
+  //cursor: pointer;
 }
 
 </style>

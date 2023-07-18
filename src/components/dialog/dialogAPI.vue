@@ -5,21 +5,11 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import DialogCatalog from "./dialogCatalog.vue";
 import {provide, ref} from "vue";
-export default {
-  components: {
-    DialogCatalog
-  },
-  setup() {
-    const catalog = ref(false)
-    provide('catalog', catalog)
-    return {
-      catalog
-    }
-  }
-}
+const catalog = ref(false)
+provide('catalog', catalog)
 </script>
 
 <style scoped>

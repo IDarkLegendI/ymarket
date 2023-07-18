@@ -22,7 +22,8 @@ const props = defineProps({
   width: 100%;
   display: flex;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 9px 0;
+  cursor: pointer;
 }
 
 .menu-main:hover {
