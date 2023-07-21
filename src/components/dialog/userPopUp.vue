@@ -114,4 +114,8 @@ import UserPopUpEl from "./userPopUpEl.vue";
   transform: translate(-50%,-50%);
   background-color: #222;
 }
+
+.menu-add:hover .plus{
+  background-color: #f4f4f4;
+}
 </style>
