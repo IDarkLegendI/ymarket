@@ -53,4 +53,8 @@ button:active{
   background-color: #fae436;
   border: none;
 }
+
+.buttonAuth {
+  border: none;
+}
 </style>

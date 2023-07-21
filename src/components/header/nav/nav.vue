@@ -18,8 +18,8 @@
       </div>
       <user-menu ref="userMenuTarget" v-show="userMenuModal"></user-menu>
     </element-nav>
-    <element-nav text="" v-else>
-      <Button msg="Войти"/>
+    <element-nav text="" v-else :notify="{toggle: false, value: '1', size: 'd'}">
+      <Button @click="authToggleFunction" msg="Войти" hoverClass="buttonAuth"/>
     </element-nav>
   </div>
 </template>
@@ -27,17 +27,24 @@
 <script setup>
 
 import ElementNav from "./elementNav.vue";
-import {ref} from "vue";
+import {inject, provide, ref} from "vue";
 import Button from "../../buttons/button.vue";
 import userMenu from "../../dialog/userPopUp.vue"
 import {onClickOutside} from "@vueuse/core";
-const loginTest = ref(true)
+import app from "../../../app.vue";
+const loginTest = ref(false)
+const authToggle = inject('authToggle')
 const userMenuTarget = ref(null)
 const userMenuModal = ref(false)
 const userOpenFunction = () => {
   document.body.classList.add('userMenuYes')
   userMenuModal.value = true
 }
+
+function authToggleFunction() {
+  authToggle.value = !authToggle.value
+}
+
 onClickOutside(userMenuTarget, () => userMenuModal.value = false)
 </script>
 
@@ -65,7 +72,7 @@ onClickOutside(userMenuTarget, () => userMenuModal.value = false)
   border-radius: 50%;
 }
 Button {
-  background-color: lightgray;
+  background-color: #e8e8e8;
 }
 Button:hover {
   background-color: darkgray;

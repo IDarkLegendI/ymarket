@@ -118,4 +118,15 @@ import UserPopUpEl from "./userPopUpEl.vue";
 .menu-add:hover .plus{
   background-color: #f4f4f4;
 }
+
+.important {
+  position: absolute;
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: 6px;
+  top: calc(50% - 4px);
+}
 </style>
