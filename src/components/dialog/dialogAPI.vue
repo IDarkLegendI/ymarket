@@ -1,8 +1,5 @@
 <template>
   <DialogCatalog v-show="catalog"></DialogCatalog>
-  <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">
-
-  </div>
 </template>
 
 <script setup lang="ts">

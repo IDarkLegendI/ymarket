@@ -10,6 +10,9 @@
     <h1>123</h1>
     <h1>123</h1>
   </div>
+  <div class="closeButton">
+
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -40,6 +43,20 @@
   min-height: 0;
   overflow-y: scroll;
   transition: min-height .1s;
+}
+
+.closeButton {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 102;
+  transition: opacity .25s ease-out,visibility .25s linear;
+  background-color: #000;
+  opacity: .6;
+  visibility: visible;
 }
 
 @keyframes animMain {
