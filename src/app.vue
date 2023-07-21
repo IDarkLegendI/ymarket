@@ -24,10 +24,10 @@ export default {
 <template>
   <div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">
     <Header />
-    <DialogCatalog v-show="catalog"></DialogCatalog>
-    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">
+    <DialogCatalog v-if="catalog"></DialogCatalog>
+<!--    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">-->
 
-    </div>
+<!--    </div>-->
   </div>
 </template>
 
