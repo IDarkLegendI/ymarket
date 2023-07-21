@@ -118,7 +118,6 @@ body, li, ol, td, th, ul {
   display: flex;
   flex-direction: row;
   height: 46px;
-  width: 100%;
   min-width: 1024px;
   padding: 0 25px;
   margin: 0 auto;
