@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header class="_3CWC9">
     <div style="align-items: center; box-sizing: border-box; background: #fff;">
       <div style="width: calc(100% - 80px); min-width: 1024px; padding: 0 25px; margin: 0 auto; max-width: 1456px;
-                  display: flex; height: 72px;">
+                  display: flex; height: 72px; background: #fff;">
         <div class="divLogo">
           <div class="logo"></div>
         </div>
@@ -30,10 +30,13 @@ const inputFocusDestroy = () => {
 </script>
 
 <style scoped>
-header {
-  top: unset;
-  z-index: 8000;
+._3CWC9 {
+  position: sticky;
+  z-index: 950;
+  top: 0;
+  background-color: #454545;
 }
+
 .divLogo {
   align-items: center;
   display: flex;
