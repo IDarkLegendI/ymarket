@@ -29,13 +29,13 @@ export default {
 
 <template>
   <div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">
-    <Header />
-    <DialogCatalog v-if="catalog"></DialogCatalog>
+    <Header></Header>
 <!--    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">-->
 
 <!--    </div>-->
     <auth-modal v-if="authToggle"></auth-modal>
   </div>
+  <DialogCatalog :active="catalog"></DialogCatalog>
 </template>
 
 <style scoped>

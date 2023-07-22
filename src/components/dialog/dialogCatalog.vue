@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog main">
+  <div class="catalog" style="top: 65px;" :class="{main: props.active}">
     <h1>123</h1>
     <h1>123</h1>
     <h1>123</h1>
@@ -10,25 +10,19 @@
     <h1>123</h1>
     <h1>123</h1>
   </div>
-  <div class="closeButton">
+  <div class="closeButton" v-if="props.active">
 
   </div>
 </template>
 
 <script setup lang="ts">
-
+interface iProps {
+  active: boolean
+}
+const props = <iProps>defineProps({active: Boolean})
 </script>
 
 <style scoped>
-.main {
-  min-height: unset;
-  height: calc(100% - 300px);
-  animation-name: animMain;
-  animation-duration: .2s;
-  visibility: visible;
-  background-color: red;
-}
-
 .catalog {
   position: fixed;
   z-index: 1002;
@@ -36,13 +30,21 @@
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-name: _1BoW-;
-  visibility: hidden;
   width: 100%;
   background: #fff;
-  height: 0;
   min-height: 0;
   overflow-y: scroll;
-  transition: min-height .1s;
+  transition: min-height 1s;
+  visibility: hidden;
+  right: 0;
+}
+
+.main {
+  min-height: unset;
+  height: calc(100% - 300px);
+  animation-name: animMain;
+  animation-duration: .2s;
+  visibility: visible;
 }
 
 .closeButton {

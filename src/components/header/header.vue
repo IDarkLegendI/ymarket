@@ -32,7 +32,7 @@ const inputFocusDestroy = () => {
 <style scoped>
 header {
   top: unset;
-  z-index: 2000;
+  z-index: 8000;
 }
 .divLogo {
   align-items: center;
