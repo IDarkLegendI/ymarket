@@ -12,10 +12,10 @@
           <Nav></Nav>
         </div>
       </div>
-      <Tabs></Tabs>
-      <div class="overlay" @click="inputFocusDestroy"></div>
     </div>
   </header>
+  <Tabs></Tabs>
+  <div class="overlay" @click="inputFocusDestroy"></div>
 </template>
 
 <script setup lang="ts">

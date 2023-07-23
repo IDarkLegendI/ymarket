@@ -34,7 +34,7 @@ const props = <iProps>defineProps({active: Boolean})
   background: #fff;
   min-height: 0;
   overflow-y: scroll;
-  transition: min-height 1s;
+  transition: min-height .1s;
   visibility: hidden;
   right: 0;
 }
