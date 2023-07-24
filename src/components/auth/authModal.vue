@@ -1,18 +1,72 @@
 <script setup lang="ts">
 
+import AuthInput from "./authInput.vue";
+import Button from "../buttons/button.vue";
 </script>
 
 <template>
 <div class="auth-main">
-
+  <div class="logo"></div>
+  <div class="header">
+    <h1>Авторизация</h1>
+  </div>
+  <div class="inputs">
+    <auth-input placeText="Логин"></auth-input>
+    <auth-input placeText="Пароль"></auth-input>
+  </div>
+  <div class="buttons">
+    <Button msg="Войти"></Button>
+    <Button msg="Регистрация" hoverClass="buttonAuth"></Button>
+  </div>
 </div>
 </template>
 
 <style scoped>
 .auth-main {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background-color: red;
+  width: 400px;
+  //height: 500px;
+  padding: 35px 0 50px 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1006;
+  gap: 40px;
+}
+
+.logo{
+  white-space: nowrap;
+  width: 200px;
+  height: 38px;
+  position: relative;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjciIGhlaWdodD0iMzIiPjxwYXRoIGQ9Ik03OC4xIDI3aDMuM0w4NiA5LjlWMjdoMy43VjQuNGgtNS4xTDgwIDIxIDc1LjQgNC40aC01LjJWMjdoMy4yVjkuOUw3OC4xIDI3em0yNy4xLTExLjJjMC00LTItNS41LTYuMS01LjUtMi42IDAtNC42LjgtNS44IDEuNVYxNWMxLS44IDMuMy0xLjYgNS4zLTEuNiAxLjkgMCAyLjcuNyAyLjcgMi40di45aC0uNmMtNS45IDAtOC42IDItOC42IDUuM3MyIDUuMiA1IDUuMmMyLjMgMCAzLjMtLjcgNC0xLjVoLjJjMCAuNC4yIDEgLjMgMS4zaDMuOGMtLjEtMS4zLS4yLTIuNy0uMi00di03LjJ6bS0zLjkgNy4zYy0uNS43LTEuNCAxLjMtMi44IDEuMy0xLjYgMC0yLjQtMS0yLjQtMi40IDAtMS45IDEuMy0yLjYgNC43LTIuNmguNnYzLjd6bTEwLjYtMTIuNWgtMy42djIxLjFoMy45di02LjZjMSAxLjUgMi40IDIuMiA0LjEgMi4yIDMuOCAwIDYuNC0zIDYuNC04LjVzLTIuNS04LjUtNi4yLTguNWMtMS44IDAtMy4zLjgtNC40IDIuNGwtLjItMi4xem0zLjMgMTMuN2MtMiAwLTMuMS0xLjctMy4xLTUuNCAwLTMuOCAxLjEtNS41IDMuMy01LjUgMi4xIDAgMy4yIDEuNyAzLjIgNS40IDAgMy44LTEuMSA1LjUtMy40IDUuNXptMTkuNiAyLjdoNC40bC02LjItOC44IDUuNS03LjZoLTMuOWwtNS41IDcuNnYtNy42aC0zLjlWMjdoMy45di04bDUuNyA4em0xNy40LTEuMXYtMy4yYy0xLjIuOC0zLjIgMS41LTUuMSAxLjUtMi44IDAtMy45LTEuMy00LjEtNC4xaDkuM1YxOGMwLTUuNy0yLjUtNy44LTYuNC03LjgtNC43IDAtNyAzLjYtNyA4LjYgMCA1LjcgMi44IDguNSA3LjcgOC41IDIuNyAwIDQuNS0uNiA1LjYtMS40em0tNi4zLTEyLjVjMS45IDAgMi41IDEuNiAyLjUgMy42di4zSDE0M2MuMS0yLjYgMS4xLTMuOSAyLjktMy45em0yMC4zLjN2LTMuMWgtMTN2My4xaDQuNlYyN2gzLjlWMTMuN2g0LjV6Ii8+PHBhdGggZD0iTTQ3LjEgMzFjOC4zIDAgMTUtNi43IDE1LTE1cy02LjctMTUtMTUtMTUtMTUgNi43LTE1IDE1Yy0uMSA4LjMgNi43IDE1IDE1IDE1eiIgZmlsbD0iI0ZFRDQyQiIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iMTYiIHI9IjE1IiBmaWxsPSIjRkMzRjFEIi8+PHBhdGggZD0iTTE3LjIgOS40aC0xLjVjLTIuNiAwLTMuOSAxLjMtMy45IDMuMyAwIDIuMi45IDMuMyAyLjggNC42bDEuNSAxLjEtNC4zIDYuN0g4LjNsNC4xLTYuMWMtMi40LTEuNy0zLjctMy4zLTMuNy02LjEgMC0zLjUgMi40LTUuOSA3LTUuOWg0LjZ2MThoLTNWOS40eiIgZmlsbD0iI0ZGRiIvPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZD0iTTQ3LjEgMzFjOC4zIDAgMTUtNi43IDE1LTE1cy02LjctMTUtMTUtMTUtMTUgNi43LTE1IDE1Yy0uMSA4LjMgNi43IDE1IDE1IDE1eiIvPjwvY2xpcFBhdGg+PHBhdGggZD0iTTM5LjcgOS4yTDI2LjUgMjYuNWwzLjUgNCA5LjgtMTMtMSA3LjEgNS41IDEuOUw1MSAxNS44Yy0uMyAyLS44IDYuNiAzLjYgOCA2LjkgMi4xIDEyLjktMTAuMyAxNS43LTE2LjZsLTQtMi4xYy0zLjEgNi41LTcuOSAxMy43LTkuOCAxMy4yLTEuOS0uNS0uMi02LjYuOS0xMC41di0uMWwtNi4xLTIuMUw0NCAxNy41bDEtNi41LTUuMy0xLjh6IiBjbGlwLXBhdGg9InVybCgjYSkiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: 200px 38px;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.header h1{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
 }
 </style>

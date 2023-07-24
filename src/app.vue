@@ -33,11 +33,22 @@ export default {
 <!--    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">-->
 
 <!--    </div>-->
-    <auth-modal v-if="authToggle"></auth-modal>
   </div>
   <DialogCatalog :active="catalog"></DialogCatalog>
+  <auth-modal v-if="authToggle"></auth-modal>
+  <div class="overlayAuth" v-if="authToggle" @click="authToggle = false"></div>
 </template>
 
 <style scoped>
-
+.overlayAuth{
+  transition: all .2s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  top: 0;
+  left: 0;
+  z-index: 1005;
+  cursor: pointer;
+}
 </style>

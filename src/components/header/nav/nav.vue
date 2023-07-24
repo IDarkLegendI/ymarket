@@ -34,6 +34,7 @@ import {onClickOutside} from "@vueuse/core";
 import app from "../../../app.vue";
 const loginTest = ref(false)
 const authToggle = inject('authToggle')
+const catalog = inject('catalog')
 const userMenuTarget = ref(null)
 const userMenuModal = ref(false)
 const userOpenFunction = () => {
@@ -43,6 +44,7 @@ const userOpenFunction = () => {
 
 function authToggleFunction() {
   authToggle.value = !authToggle.value
+  catalog.value = false
 }
 
 onClickOutside(userMenuTarget, () => userMenuModal.value = false)
@@ -70,12 +72,6 @@ onClickOutside(userMenuTarget, () => userMenuModal.value = false)
   height: 100%;
   width: 100%;
   border-radius: 50%;
-}
-Button {
-  background-color: #e8e8e8;
-}
-Button:hover {
-  background-color: darkgray;
 }
 svg {
   width: 1.25vw;

@@ -56,5 +56,10 @@ button:active{
 
 .buttonAuth {
   border: none;
+  background-color: #dedede;
+}
+
+.buttonAuth:hover {
+  background-color: darkgray
 }
 </style>
