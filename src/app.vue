@@ -3,8 +3,10 @@ import Header from "./components/header/header.vue";
 import {inject, provide, ref} from "vue";
 import DialogCatalog from "./components/dialog/dialogCatalog.vue";
 import AuthModal from "./components/auth/authModal.vue";
+import AuthModalReg from "./components/auth/authModalReg.vue";
 export default {
   components: {
+    AuthModalReg,
     AuthModal,
     DialogCatalog,
     Header
@@ -12,16 +14,19 @@ export default {
   setup() {
     const catalog = ref(false)
     const authToggle = ref(false)
+    const regToggle = ref(false)
     const toggleCatalog = () => {
       catalog.value = !catalog.value
     }
     provide('authToggle', authToggle)
+    provide('regToggle', regToggle)
     provide('catalog', catalog)
     provide('toggleCatalog', toggleCatalog)
 
     return {
       catalog,
-      authToggle
+      authToggle,
+      regToggle
     }
   },
 }
@@ -36,7 +41,8 @@ export default {
   </div>
   <DialogCatalog :active="catalog"></DialogCatalog>
   <auth-modal v-if="authToggle"></auth-modal>
-  <div class="overlayAuth" v-if="authToggle" @click="authToggle = false"></div>
+  <auth-modal-reg v-if="regToggle"></auth-modal-reg>
+  <div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
 </template>
 
 <style scoped>

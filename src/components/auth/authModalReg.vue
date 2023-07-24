@@ -8,27 +8,28 @@ const authToggle = inject('authToggle')
 </script>
 
 <template>
-<div class="auth-main">
-  <div class="logo"></div>
-  <div class="header">
-    <h1>Авторизация</h1>
+  <div class="auth-main">
+    <div class="logo"></div>
+    <div class="header">
+      <h1>Регистрация</h1>
+    </div>
+    <div class="inputs">
+      <auth-input placeText="Логин"></auth-input>
+      <auth-input placeText="Пароль"></auth-input>
+      <auth-input placeText="Повтор пароля"></auth-input>
+    </div>
+    <div class="buttons">
+      <Button msg="Зарегистрироваться"></Button>
+      <Button msg="Вход" hoverClass="buttonAuth" @click="regToggle = false; authToggle = true"></Button>
+    </div>
   </div>
-  <div class="inputs">
-    <auth-input placeText="Логин"></auth-input>
-    <auth-input placeText="Пароль"></auth-input>
-  </div>
-  <div class="buttons">
-    <Button msg="Войти"></Button>
-    <Button msg="Регистрация" hoverClass="buttonAuth" @click="regToggle = true; authToggle = false"></Button>
-  </div>
-</div>
 </template>
 
 <style scoped>
 .auth-main {
   position: absolute;
   width: 500px;
-  //height: 500px;
+//height: 500px;
   padding: 35px 0 50px 0;
   top: 50%;
   left: 50%;
