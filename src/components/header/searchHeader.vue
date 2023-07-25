@@ -21,7 +21,7 @@ const inputFocus = () => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 1002;
+  z-index: 952;
 }
 .search-box{
   display: flex;

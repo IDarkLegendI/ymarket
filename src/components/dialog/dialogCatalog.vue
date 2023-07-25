@@ -25,7 +25,7 @@ const props = <iProps>defineProps({active: Boolean})
 <style scoped>
 .catalog {
   position: fixed;
-  z-index: 1002;
+  z-index: 949;
   animation-duration: .1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
