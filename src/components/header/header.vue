@@ -87,13 +87,13 @@ const inputFocusDestroy = () => {
 }
 .userMenuYes .inputOverlay{
   transition: all .2s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, .4);
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 952;
   //cursor: pointer;
 }
 

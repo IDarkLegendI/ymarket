@@ -32,7 +32,7 @@ import Button from "../../buttons/button.vue";
 import userMenu from "../../dialog/userPopUp.vue"
 import {onClickOutside} from "@vueuse/core";
 import app from "../../../app.vue";
-const loginTest = ref(false)
+const loginTest = ref(true)
 const authToggle = inject('authToggle')
 const catalog = inject('catalog')
 const userMenuTarget = ref(null)

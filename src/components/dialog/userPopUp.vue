@@ -68,7 +68,7 @@ import UserPopUpEl from "./userPopUpEl.vue";
   width: 330px;
   height: 900px;
   position: absolute;
-  z-index: 3;
+  z-index: 953;
   right: -5px;
   top: -5px;
   display: flex;
