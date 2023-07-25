@@ -10,12 +10,12 @@
           <ButtonPopUp msg="Каталог" class="ButtonPopUp"></ButtonPopUp>
           <SearchHeader class="SearchHeader"></SearchHeader>
           <Nav></Nav>
+          <div class="inputOverlay" @click="inputFocusDestroy"></div>
         </div>
       </div>
     </div>
   </header>
   <Tabs></Tabs>
-  <div class="overlay" @click="inputFocusDestroy"></div>
 </template>
 
 <script setup lang="ts">
@@ -73,18 +73,19 @@ const inputFocusDestroy = () => {
   position: relative;
   flex-grow: 1;
 }
-.searchYes .overlay{
+
+.searchYes .inputOverlay{
   transition: all .2s;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, .2);
   top: 0;
   left: 0;
   z-index: 1;
   cursor: pointer;
 }
-.userMenuYes .overlay{
+.userMenuYes .inputOverlay{
   transition: all .2s;
   position: absolute;
   width: 100%;
