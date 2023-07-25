@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog" style="top: 65px;" :class="{main: props.active}">
+  <div class="catalog" style="top: 65px;" :class="{main: catalog}">
     <h1>123</h1>
     <h1>123</h1>
     <h1>123</h1>
@@ -10,16 +10,14 @@
     <h1>123</h1>
     <h1>123</h1>
   </div>
-  <div class="closeButton" v-if="props.active">
+  <div class="closeButton" v-if="catalog" @click="catalog = false">
 
   </div>
 </template>
 
 <script setup lang="ts">
-interface iProps {
-  active: boolean
-}
-const props = <iProps>defineProps({active: Boolean})
+import {inject} from "vue";
+const catalog = inject('catalog')
 </script>
 
 <style scoped>

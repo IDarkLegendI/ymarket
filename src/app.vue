@@ -39,7 +39,7 @@ export default {
 
 <!--    </div>-->
   </div>
-  <DialogCatalog :active="catalog"></DialogCatalog>
+  <DialogCatalog></DialogCatalog>
   <auth-modal v-if="authToggle"></auth-modal>
   <auth-modal-reg v-if="regToggle"></auth-modal-reg>
   <div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
