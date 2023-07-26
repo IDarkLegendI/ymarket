@@ -33,16 +33,17 @@ export default {
 </script>
 
 <template>
-  <div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">
-    <Header></Header>
-<!--    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">-->
+  <NuxtWelcome />
+<!--  <div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">-->
+<!--    <Header></Header>-->
+<!--&lt;!&ndash;    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">&ndash;&gt;-->
 
-<!--    </div>-->
-  </div>
-  <DialogCatalog></DialogCatalog>
-  <auth-modal v-if="authToggle"></auth-modal>
-  <auth-modal-reg v-if="regToggle"></auth-modal-reg>
-  <div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </div>-->
+<!--  <DialogCatalog></DialogCatalog>-->
+<!--  <auth-modal v-if="authToggle"></auth-modal>-->
+<!--  <auth-modal-reg v-if="regToggle"></auth-modal-reg>-->
+<!--  <div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>-->
 </template>
 
 <style scoped>

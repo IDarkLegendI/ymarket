@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog" style="top: 65px;" :class="{main: catalog}">
+  <div class="catalog" style="top: 72px;" :class="{main: catalog}">
     <h1>123</h1>
     <h1>123</h1>
     <h1>123</h1>
