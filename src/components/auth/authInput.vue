@@ -5,10 +5,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <input type="text" :placeholder="props.placeText">
+  <div>
+    <input type="text" :placeholder="props.placeText">
+  </div>
 </template>
 
 <style scoped>
+div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 27px;
+}
 input{
   width: 65%;
   height: 25px;
