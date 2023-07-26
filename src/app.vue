@@ -33,7 +33,6 @@ export default {
 </script>
 
 <template>
-  <NuxtWelcome />
 <!--  <div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">-->
 <!--    <Header></Header>-->
 <!--&lt;!&ndash;    <div style="position: absolute; background-color: red; height: 50vh; width: 20vw" v-show="catalog">&ndash;&gt;-->
