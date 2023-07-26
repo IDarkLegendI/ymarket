@@ -19,17 +19,18 @@ div {
 }
 input{
   width: 65%;
-  height: 25px;
+  height: 30px;
   border-radius: 5px;
   border: 1px solid #000000;
   padding: 2px 10px;
   color: #676767;
   transition: all .2s;
+  font-size: 18px;
 }
 
 input:focus {
   color: black;
   width: 67%;
-  height: 27px;
+  height: 32px;
 }
 </style>
