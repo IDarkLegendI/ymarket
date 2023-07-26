@@ -27,4 +27,8 @@ const authToggle = inject('authToggle')
 
 <style scoped>
 @import 'styleModal.css';
+.buttons {
+  flex-direction: column;
+  gap: 10px;
+}
 </style>

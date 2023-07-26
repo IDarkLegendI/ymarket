@@ -1,6 +1,6 @@
 <template>
   <button :class="props.hoverClass">
-    <div style="display: flex; align-items: center">
+    <div style="display: flex; align-items: center; justify-content: center">
       <slot></slot>
       <div class="msgText">{{ props.msg }}</div>
     </div>
