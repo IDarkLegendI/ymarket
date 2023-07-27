@@ -13,23 +13,29 @@ export default {
     provide('catalog', catalog)
     provide('toggleCatalog', toggleCatalog)
 
+    const {data: user} = useAsyncData('user', () => $fetch('/api/user'))
+
     return {
       catalog,
       authToggle,
-      regToggle
+      regToggle,
+      user
     }
   },
 }
 </script>
 
 <template>
-<div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">
-  <Header></Header>
-</div>
-<DialogCatalog></DialogCatalog>
-<auth-modal v-if="authToggle"></auth-modal>
-<auth-modal-reg v-if="regToggle"></auth-modal-reg>
-<div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
+  <pre>
+    {{ user }}
+  </pre>
+<!--<div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">-->
+<!--  <Header></Header>-->
+<!--</div>-->
+<!--<DialogCatalog></DialogCatalog>-->
+<!--<auth-modal v-if="authToggle"></auth-modal>-->
+<!--<auth-modal-reg v-if="regToggle"></auth-modal-reg>-->
+<!--<div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>-->
 </template>
 
 <style scoped>
@@ -45,4 +51,3 @@ export default {
   cursor: pointer;
 }
 </style>
-i
