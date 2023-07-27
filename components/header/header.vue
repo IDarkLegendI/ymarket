@@ -27,6 +27,7 @@ import Tabs from "./tabs/tabs.vue";
 const inputFocusDestroy = () => {
   document.body.classList.remove('searchYes', 'userMenuYes')
 }
+import '~/style.css'
 </script>
 
 <style scoped>
@@ -56,7 +57,7 @@ const inputFocusDestroy = () => {
   background-size: 167px 32px;
   display: inline-block
 }
-.part{
+.part {
   display: flex;
   width: 100%;
 }
