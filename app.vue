@@ -26,16 +26,13 @@ export default {
 </script>
 
 <template>
-  <pre>
-    {{ user }}
-  </pre>
-<!--<div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">-->
-<!--  <Header></Header>-->
-<!--</div>-->
-<!--<DialogCatalog></DialogCatalog>-->
-<!--<auth-modal v-if="authToggle"></auth-modal>-->
-<!--<auth-modal-reg v-if="regToggle"></auth-modal-reg>-->
-<!--<div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>-->
+<div style="display: flex; flex-direction: column; min-height: 100%; min-width: 1024px;">
+  <Header></Header>
+</div>
+<DialogCatalog></DialogCatalog>
+<auth-modal v-if="authToggle"></auth-modal>
+<auth-modal-reg v-if="regToggle"></auth-modal-reg>
+<div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
 </template>
 
 <style scoped>
