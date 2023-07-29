@@ -13,13 +13,10 @@ export default {
     provide('catalog', catalog)
     provide('toggleCatalog', toggleCatalog)
 
-    const {data: user} = useAsyncData('user', () => $fetch('/api/user'))
-
     return {
       catalog,
       authToggle,
-      regToggle,
-      user
+      regToggle
     }
   },
 }
