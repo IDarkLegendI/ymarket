@@ -1,20 +1,24 @@
 import {Nitro} from "nitropack";
-import * as mysql from "mysql2/promise";
+import * as mysql from "mysql";
 
 export let connectionMysql: mysql.Pool;
 
 export default async (_nitroApp: Nitro) => {
-    try {
-        connectionMysql = await mysql.createPool({
-            host: '127.0.0.1',
-            port: 3306,
-            user: 'root',
-            password: '',
-            database: 'ymarket'
-        })
-        console.log(`hui`)
-    }
-    catch (e) {
-        console.log(`Error MySQL! ${e}`)
-    }
+    const connection =  mysql.createPool({
+        host			:	"192.168.100.150",
+        user			: 	"vmSAdmin",
+        password		: 	"xrenTebeXaxaxa111",
+        database		:	"velomaster",
+        port: 3306
+    });
+
+    connection.getConnection(function(e) {
+        if (e) 	{
+            console.log("DATABASE IS NOT WORKING");
+            console.error(e);
+        }
+        else {
+            console.log(`DATABASE IS WORKING`);
+        }
+    });
 }
