@@ -1,5 +1,6 @@
 <script lang="ts">
 import {inject, provide, ref} from "vue";
+import '~/style.css'
 export default {
   setup() {
     const catalog = ref(false)
