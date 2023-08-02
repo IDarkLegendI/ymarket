@@ -11,3 +11,5 @@ export default fromNodeMiddleware(async (req: IncomingMessage, res: ServerRespon
         message: res.statusMessage
     }
 })
+
+// Проверка работоспосности: http://localhost:3000/api/users (Если есть в базе хотя бы один пользователь)
