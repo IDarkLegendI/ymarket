@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ymarketremake.iml" filepath="$PROJECT_DIR$/.idea/ymarketremake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ymarket.iml" filepath="$PROJECT_DIR$/.idea/ymarket.iml" />
     </modules>
   </component>
 </project>
