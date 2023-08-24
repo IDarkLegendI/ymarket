@@ -1,17 +1,18 @@
 import mysql from "mysql"
-import Config from "../config.js";
+import Config from "./config";
 import {Logger} from "../modules/logger";
 
 class DBRouter {
 	private connection = mysql.createPool(Config.db);
 	checkConnection()
 	{
-		this.connection.getConnection((e) => {
+		this.connection.getConnection((e: mysql.MysqlError, connection: mysql.PoolConnection) => {
 			if (e) 	{
 				Logger.log("error", 'DATABASE IS NOT WORKING')
 				console.error(e);
 			}
 			else {
+				connection.release()
 				Logger.log("success", 'DATABASE IS WORKING')
 			}
 		});
