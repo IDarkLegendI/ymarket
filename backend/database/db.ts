@@ -1,5 +1,6 @@
 import mysql from "mysql"
 import Config from "../config.js";
+import {Logger} from "../modules/logger";
 
 class DBRouter {
 	private connection = mysql.createPool(Config.db);
@@ -7,11 +8,11 @@ class DBRouter {
 	{
 		this.connection.getConnection((e) => {
 			if (e) 	{
-				console.log("⛔[SERVER] -> DATABASE IS NOT WORKING");
+				Logger.log("error", 'DATABASE IS NOT WORKING')
 				console.error(e);
 			}
 			else {
-				console.log(`⚡️[SERVER] -> DATABASE IS WORKING`);
+				Logger.log("success", 'DATABASE IS WORKING')
 			}
 		});
 	}
