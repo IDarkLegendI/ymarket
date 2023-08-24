@@ -1,9 +1,9 @@
 type LogType = 'success' | 'danger' | 'error'
 export class Logger {
-	logTypeEmoji: {[index in LogType]: string} = {'success': '⚡️', 'danger': '⚠️', 'error': '⛔'}
-	log(type: LogType, text: string, priority: number = 0)
+	static logTypeEmoji: {[index in LogType]: string} = {'success': '⚡️', 'danger': '⚠️', 'error': '⛔'}
+	static log(type: LogType, text: string, priority: number = 0)
 	{
-		console.log(`${this.logTypeEmoji[type]} -> ${text}`)
+		console.log(`${Logger.logTypeEmoji[type]} [SERVER][${priority}] -> ${text}`)
 		// TODO: добавить логирование в файл при необходимости, в зависимости от priority
 	}
 }
