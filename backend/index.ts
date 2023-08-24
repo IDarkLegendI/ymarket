@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import {dbRouter} from "./database/db";
 
 const app: Express = express()
 const port = 3003
@@ -8,5 +9,7 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`)
+    console.log(`⚡️[SERVER] -> Server is running at http://localhost:${port}`)
 })
+
+dbRouter.checkConnection()
