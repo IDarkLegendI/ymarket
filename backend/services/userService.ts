@@ -34,4 +34,15 @@ export class UserService {
         await TokenService.saveToken(userDto.login, tokens.refreshToken)
         return {...tokens, userDto}
     }
+
+    static async login(login: string, password: string) {
+        let data = await dbRouter.query(`SELECT id FROM users WHERE login = '${login}'`)
+        if (!data[0]) throw new Error('Пользователя с таким логином не найдено')
+        const passwordUser = await dbRouter.query(`SELECT password FROM users WHERE login = '${login}'`)
+        if (!this.validatePassword(password, passwordUser[0].password)) throw new Error('Пароль не верный')
+        const userDto = new UserDto(login)
+        const tokens = TokenService.generateTokens({...userDto})
+        await TokenService.saveToken(userDto.login, tokens.refreshToken)
+        return {...tokens, userDto}
+    }
 }

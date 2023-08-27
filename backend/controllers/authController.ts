@@ -18,7 +18,10 @@ export class AuthController {
 	}
 	async login(req: Request, res: Response) {
 		try {
-
+			const {login, password} = req.body
+			const userData = await UserService.login(login, password)
+			res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
+			return res.json(userData)
 		}
 		catch (e) {
 			Logger.log("error", e)
@@ -31,16 +34,8 @@ export class AuthController {
 
 		}
 		catch (e){
-
-		}
-	}
-
-	async activate(req: Request, res: Response) {
-		try {
-
-		}
-		catch (e){
-
+			Logger.log("error", e)
+			res.status(400).json()
 		}
 	}
 
@@ -49,7 +44,8 @@ export class AuthController {
 
 		}
 		catch (e){
-
+			Logger.log("error", e)
+			res.status(400).json()
 		}
 	}
 
