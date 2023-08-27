@@ -17,7 +17,6 @@ export class TokenService {
     }
 
     static async removeToken(refreshToken: string) {
-        const tokenData = await dbRouter.query(`UPDATE users SET refresh = NULL WHERE refresh = '${refreshToken}'`)
-        return tokenData
+        return await dbRouter.query(`UPDATE users SET refresh = NULL WHERE refresh = '${refreshToken}'`)
     }
 }
