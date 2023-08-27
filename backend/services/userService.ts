@@ -45,4 +45,9 @@ export class UserService {
         await TokenService.saveToken(userDto.login, tokens.refreshToken)
         return {...tokens, userDto}
     }
+
+    static async logout(refreshToken: string) {
+        const token = await TokenService.removeToken(refreshToken)
+        return token;
+    }
 }
