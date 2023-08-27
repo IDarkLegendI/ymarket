@@ -44,20 +44,12 @@ export class AuthController {
 
 	async refresh(req: Request, res: Response) {
 		try {
-
+			const {refreshToken} = req.cookies
+			const userData = await UserService.refresh(refreshToken)
+			res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
+			return res.json(userData)
 		}
 		catch (e){
-			Logger.log("error", e)
-			res.status(400).json()
-		}
-	}
-
-	async getUsers(req: Request, res: Response)
-	{
-		try {
-			res.json('Ivan work!')
-		}
-		catch (e) {
 			Logger.log("error", e)
 			res.status(400).json()
 		}

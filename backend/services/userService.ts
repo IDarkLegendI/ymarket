@@ -1,5 +1,4 @@
 import {dbRouter} from "../database/db";
-import {Logger} from "../controllers/modules/logger";
 import Crypto from "crypto";
 import {UserDto} from "../dto/userdto";
 import {TokenService} from "./tokenService";
@@ -47,7 +46,20 @@ export class UserService {
     }
 
     static async logout(refreshToken: string) {
-        const token = await TokenService.removeToken(refreshToken)
-        return token;
+        return await TokenService.removeToken(refreshToken);
+    }
+
+    static async refresh(refreshToken: string) {
+        if (!refreshToken) throw new Error('Пользователь не авторизован')
+        const userData = TokenService.validateRefreshToken(refreshToken)
+        const tokenFromDb = TokenService.findToken(refreshToken)
+        if (!userData || !refreshToken) throw new Error('Пользователь не авторизован')
+
+        const loginUser = await dbRouter.query(`SELECT login FROM users WHERE refresh = '${refreshToken}'`)
+
+        const userDto = new UserDto(loginUser[0].login)
+        const tokens = TokenService.generateTokens({...userDto})
+        await TokenService.saveToken(userDto.login, tokens.refreshToken)
+        return {...tokens, userDto}
     }
 }
