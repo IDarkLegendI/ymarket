@@ -7,10 +7,9 @@ export class UserDto {
     firstName: string
 
     async queries(login: string){
-        const id = await dbRouter.query(`SELECT id FROM users WHERE login = '${login}'`)
-        const firstName = await dbRouter.query(`SELECT firstName FROM users WHERE login = '${login}'`)
-        this.id = id[0]
-        this.firstName = firstName[0]
+        const data = await dbRouter.query(`SELECT id, firstName FROM users WHERE login = '${login}'`)
+        this.id = data[0].id
+        this.firstName = data[0].firstName
     }
 
     constructor(login: string) {
