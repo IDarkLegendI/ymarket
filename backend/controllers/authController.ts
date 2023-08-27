@@ -1,17 +1,15 @@
 import {Request, Response } from 'express';
-import {Logger} from "../modules/logger";
+import {Logger} from "./modules/logger";
 import {dbRouter} from "../database/db";
+import {UserService} from "../services/userService";
 
 export class AuthController {
 	async registration(req: Request, res: Response) {
 		try {
 			const {firstName, lastName, login, password} = req.body
-			console.log(firstName, lastName, login, password)
-			let data = await dbRouter.query(`SELECT id FROM users WHERE login = '${login}'`)
-			if (data[0]) return res.end('Такой аккаунт уже находится в базе данных')
-			data = await dbRouter.query(`INSERT INTO users (firstName, lastName, login, password) VALUES ('${firstName}', '${lastName}', '${login}', '${password}')`)
-			if (!data[0]) return false
-			res.end('Пользователь добавлен в базу данных')
+			const userData = await UserService.registration(firstName, lastName, login, password)
+			res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true})
+			return res.json(userData)
 		}
 		catch (e) {
 			Logger.log("error", e)
@@ -27,6 +25,34 @@ export class AuthController {
 			res.status(400).json()
 		}
 	}
+
+	async logout(req: Request, res: Response) {
+		try {
+
+		}
+		catch (e){
+
+		}
+	}
+
+	async activate(req: Request, res: Response) {
+		try {
+
+		}
+		catch (e){
+
+		}
+	}
+
+	async refresh(req: Request, res: Response) {
+		try {
+
+		}
+		catch (e){
+
+		}
+	}
+
 	async getUsers(req: Request, res: Response)
 	{
 		try {
