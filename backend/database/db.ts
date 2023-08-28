@@ -1,6 +1,6 @@
 import mysql from "mysql"
 import Config from "./config";
-import {Logger} from "../controllers/modules/logger";
+import {Logger} from "../modules/logger";
 
 class DBRouter {
 	private connection = mysql.createPool(Config.db);

@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import {dbRouter} from "./database/db";
-import {Logger} from "./controllers/modules/logger";
+import {Logger} from "./modules/logger";
 import {router} from './routes/authRouter'
 import bodyParser from "body-parser"
 import cors from 'cors'

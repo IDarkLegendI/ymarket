@@ -1,5 +1,5 @@
 import {Request, Response } from 'express';
-import {Logger} from "./modules/logger";
+import {Logger} from "../modules/logger";
 import {dbRouter} from "../database/db";
 import {UserService} from "../services/userService";
 

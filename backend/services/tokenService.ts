@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import {dbRouter} from "../database/db";
-import {Logger} from "../controllers/modules/logger";
+import {Logger} from "../modules/logger";
 
 export class TokenService {
     private static JWT_ACCESS_SECRET: string

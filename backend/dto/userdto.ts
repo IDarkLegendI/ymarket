@@ -1,5 +1,5 @@
 import {dbRouter} from "../database/db";
-import {Logger} from "../controllers/modules/logger";
+import {Logger} from "../modules/logger";
 
 export class UserDto {
     id: number
