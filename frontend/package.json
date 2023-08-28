@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.2.1",
-    "vue": "^3.2.47"
+    "axios": "^1.5.0",
+    "vue": "^3.2.47",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
