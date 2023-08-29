@@ -1,7 +1,13 @@
-import {createStore} from "vuex";
+import {defineStore} from "pinia";
 
-export default createStore({
-    state: {
-
-    }
+export const useStore = defineStore('globalStore', {
+    state: () => ({ auth: false }),
+    getters: {
+        isAuth: (state) => state.auth,
+    },
+    actions: {
+        setAuth(value: boolean) {
+            this.auth = value
+        },
+    },
 })
