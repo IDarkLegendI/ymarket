@@ -18,7 +18,7 @@ const store = useStore()
   <div class="auth-main">
     <div class="logo"></div>
     <div class="header">
-      <h1>Регистрация {{lastName}}</h1>
+      <h1>Регистрация</h1>
     </div>
     <div class="inputs">
       <auth-input v-model="firstName" placeText="Ваше имя"></auth-input>
