@@ -1,11 +1,11 @@
 import { Router } from "express";
 import {AuthController} from "../controllers/authController";
 
-export const router = Router()
+export const authRouter = Router()
 const controller = new AuthController()
 
-router.post('/registration', controller.registration)
-router.post('/login', controller.login)
-router.post('/logout', controller.logout)
-router.get('/refresh', controller.refresh)
+authRouter.post('/registration', controller.registration)
+authRouter.post('/login', controller.login)
+authRouter.post('/logout', controller.logout)
+authRouter.get('/refresh', controller.refresh)
 

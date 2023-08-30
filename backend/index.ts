@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import {dbRouter} from "./database/db";
 import {Logger} from "./modules/logger";
-import {router} from './routes/authRouter'
+import {authRouter} from './routes/authRouter'
 import bodyParser from "body-parser"
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
@@ -15,7 +15,7 @@ app.use(cors({
     origin: 'http://localhost:5173'
 }))
 app.use(cookieParser())
-app.use('/auth', router)
+app.use('/auth', authRouter)
 
 
 app.get('/api', (req: Request, res: Response) => {
