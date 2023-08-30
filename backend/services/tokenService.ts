@@ -3,13 +3,11 @@ import {dbRouter} from "../database/db";
 import {Logger} from "../modules/logger";
 
 export class TokenService {
-    private static JWT_ACCESS_SECRET: string
-    private static JWT_REFRESH_SECRET: string
+    private static JWT_ACCESS_SECRET: string = 'ymarket-accSDF1ess-se3cret-keySDFF3SDF'
+    private static JWT_REFRESH_SECRET: string = 'ymarket-refrSD324Fesh-seSDFcr2t-keySD1FF'
     static generateTokens (payload: {id: number ,login: string, firstName: string}) {
-        this.JWT_ACCESS_SECRET = 'ymarket-access-secret-key'
-        const JWT_REFRESH_SECRET = 'ymarket-refresh-secret-key'
         const accessToken = jwt.sign(payload, this.JWT_ACCESS_SECRET, {expiresIn: '30m'})
-        const refreshToken = jwt.sign(payload, this.JWT_ACCESS_SECRET, {expiresIn: '30d'})
+        const refreshToken = jwt.sign(payload, this.JWT_REFRESH_SECRET, {expiresIn: '30d'})
         return {
             accessToken,
             refreshToken

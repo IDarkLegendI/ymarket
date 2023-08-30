@@ -1,9 +1,10 @@
 <script lang="ts">
 import Header from "./components/header/header.vue";
-import {inject, provide, ref} from "vue";
+import {onBeforeMount, provide, ref} from "vue";
 import DialogCatalog from "./components/dialog/dialogCatalog.vue";
 import AuthModal from "./components/auth/authModal.vue";
 import AuthModalReg from "./components/auth/authModalReg.vue";
+import {useStore} from "./store";
 export default {
   components: {
     AuthModalReg,
@@ -15,6 +16,7 @@ export default {
     const catalog = ref(false)
     const authToggle = ref(false)
     const regToggle = ref(false)
+    const store = useStore()
     const toggleCatalog = () => {
       catalog.value = !catalog.value
     }
@@ -22,6 +24,15 @@ export default {
     provide('regToggle', regToggle)
     provide('catalog', catalog)
     provide('toggleCatalog', toggleCatalog)
+
+    onBeforeMount(() => {
+      if(localStorage.getItem('token')) {
+        store.checkAuth()
+      }
+      else {
+        console.log('hui')
+      }
+    })
 
     return {
       catalog,

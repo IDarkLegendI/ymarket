@@ -10,7 +10,10 @@ const app: Express = express()
 const port = 3003
 
 app.use(bodyParser())
-app.use(cors())
+app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:5173'
+}))
 app.use(cookieParser())
 app.use('/auth', router)
 

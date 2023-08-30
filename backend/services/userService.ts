@@ -31,7 +31,7 @@ export class UserService {
         const userDto = new UserDto(login)
         const tokens = TokenService.generateTokens({...userDto})
         await TokenService.saveToken(userDto.login, tokens.refreshToken)
-        return {...tokens, userDto}
+        return {...tokens, user: userDto}
     }
 
     static async login(login: string, password: string) {
@@ -42,7 +42,7 @@ export class UserService {
         const userDto = new UserDto(login)
         const tokens = TokenService.generateTokens({...userDto})
         await TokenService.saveToken(userDto.login, tokens.refreshToken)
-        return {...tokens, userDto}
+        return {...tokens, user: userDto}
     }
 
     static async logout(refreshToken: string) {
@@ -60,6 +60,6 @@ export class UserService {
         const userDto = new UserDto(loginUser[0].login)
         const tokens = TokenService.generateTokens({...userDto})
         await TokenService.saveToken(userDto.login, tokens.refreshToken)
-        return {...tokens, userDto}
+        return {...tokens, user: userDto}
     }
 }

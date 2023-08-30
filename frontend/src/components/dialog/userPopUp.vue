@@ -7,7 +7,7 @@ const store = useStore()
 <template>
   <div class="main">
     <div class="upper">
-      <user-pop-up-el header = 'Иван Вишняков' description = 'hui@mail.ru' type="acc">
+      <user-pop-up-el :header = '`${store.user.firstName} ${store.user.lastName}`' :description = 'store.user.login' type="acc">
         <img width="40" height="40" src="//avatars.mds.yandex.net/get-yapic/39727/enc-57f5e77321ece3d2916c9d14b4a831068abbb569b5318b1fe0d892c74bc85b92/islands-retina-middle" alt="">
       </user-pop-up-el>
       <user-pop-up-el header = 'Подключите Плюс' description = 'Фильмы, музыка и кешбэк баллами'>
