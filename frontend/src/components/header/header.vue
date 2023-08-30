@@ -10,7 +10,7 @@
           <ButtonPopUp msg="Каталог" class="ButtonPopUp"></ButtonPopUp>
           <SearchHeader class="SearchHeader"></SearchHeader>
           <Nav></Nav>
-          <div class="inputOverlay" @click="inputFocusDestroy"></div>
+          <div class="inputOverlay"></div>
         </div>
       </div>
     </div>
@@ -22,11 +22,11 @@
 import SearchHeader from "./searchHeader.vue";
 import ButtonPopUp from "../buttons/buttonPopUp.vue";
 import Nav from "./nav/nav.vue";
-import Button from "../buttons/button.vue";
 import Tabs from "./tabs/tabs.vue";
-const inputFocusDestroy = () => {
-  document.body.classList.remove('searchYes', 'userMenuYes')
-}
+
+// const inputFocusDestroy = () => {
+//   document.body.classList.remove('searchYes', 'userMenuYes')
+// }
 </script>
 
 <style scoped>
@@ -94,7 +94,6 @@ const inputFocusDestroy = () => {
   top: 0;
   left: 0;
   z-index: 952;
-  //cursor: pointer;
 }
 
 </style>

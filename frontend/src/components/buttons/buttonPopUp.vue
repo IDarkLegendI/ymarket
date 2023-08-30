@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import Button from "./button.vue";
-import {inject, ref} from "vue";
+import {inject} from "vue";
 interface iProps {
   msg: string,
 }

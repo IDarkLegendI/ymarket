@@ -2,6 +2,9 @@
 import UserPopUpEl from "./userPopUpEl.vue";
 import {useStore} from "../../store";
 const store = useStore()
+function logout() {
+  store.logout()
+}
 </script>
 
 <template>
@@ -53,7 +56,7 @@ const store = useStore()
       <user-pop-up-el header = 'Маркет нанимает'>
         <svg style="width: 24px; height: 24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" data-tid="a1fad2cd"><g fill="none" fill-rule="evenodd" stroke="#000" stroke-width="1.5"><path d="m14.593 2.75-2.2 7.332-3.493.168-2.72-7.166 8.413-.334z"></path><path d="M4 9c1.695 0 2.644 1.033 2.847 3.098a1 1 0 0 0 .996.902h5.315a1 1 0 0 0 .995-.902C14.356 10.033 15.305 9 17 9m-6.5 4.5v4.49M7 17.97C7 16.657 7.545 16 8.635 16h3.785c1.063 0 1.595.657 1.595 1.97"></path></g></svg>
       </user-pop-up-el>
-      <user-pop-up-el @click="store.logout()" header = 'Выйти'>
+      <user-pop-up-el @click="logout()" header = 'Выйти'>
         <svg style="width: 24px; height: 24px" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" viewBox="0 0 24 24" data-tid="9fd23bbc"><path d="M7 11h8.987v2H7v2.964l-4-4 4-4V11Zm2-6V3h7a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H9v-2h7a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H9Z"></path></svg>
       </user-pop-up-el>
     </div>

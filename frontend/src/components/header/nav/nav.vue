@@ -16,11 +16,12 @@
       <div class="profile">
         <img class="imgProfile" src="//avatars.mds.yandex.net/get-yapic/39727/enc-57f5e77321ece3d2916c9d14b4a831068abbb569b5318b1fe0d892c74bc85b92/islands-retina-middle" alt="Dark Legend">
       </div>
-      <user-menu ref="userMenuTarget" v-show="userMenuModal"></user-menu>
+      <user-menu v-if="userMenuModal"></user-menu>
     </element-nav>
     <element-nav text="" v-else :notify="{toggle: false, value: '1', size: 'd'}">
       <Button @click="authToggleFunction" msg="Войти" hoverClass="buttonAuth"/>
     </element-nav>
+    <div class="closeButton" v-if="userMenuModal" @click="userCloseFunction()"></div>
   </div>
 </template>
 
@@ -35,11 +36,14 @@ import {useStore} from "../../../store";
 const store = useStore()
 const authToggle = inject('authToggle')
 const catalog = inject('catalog')
-const userMenuTarget = ref(null)
 const userMenuModal = ref(false)
+provide('userMenuModal', userMenuModal)
 const userOpenFunction = () => {
-  document.body.classList.add('userMenuYes')
   userMenuModal.value = true
+}
+
+const userCloseFunction = () => {
+  userMenuModal.value = false
 }
 
 function authToggleFunction() {
@@ -47,7 +51,6 @@ function authToggleFunction() {
   catalog.value = false
 }
 
-onClickOutside(userMenuTarget, () => userMenuModal.value = false)
 </script>
 
 <style scoped>
@@ -76,5 +79,8 @@ onClickOutside(userMenuTarget, () => userMenuModal.value = false)
 svg {
   width: 1.25vw;
   height: 1.25vw;
+}
+.closeButton {
+  z-index: 952;
 }
 </style>

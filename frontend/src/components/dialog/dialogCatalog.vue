@@ -10,9 +10,7 @@
     <h1>123</h1>
     <h1>123</h1>
   </div>
-  <div class="closeButton" v-if="catalog" @click="catalog = false">
-
-  </div>
+  <div class="closeButton" v-if="catalog" @click="catalog = false"></div>
 </template>
 
 <script setup lang="ts">
@@ -46,17 +44,7 @@ const catalog = inject('catalog')
 }
 
 .closeButton {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  height: 100%;
   z-index: 102;
-  transition: opacity .25s ease-out,visibility .25s linear;
-  background-color: #000;
-  opacity: .6;
-  visibility: visible;
 }
 
 @keyframes animMain {
