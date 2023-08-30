@@ -1,12 +1,19 @@
 <script setup lang="ts">
 const props = defineProps({
-  placeText: String
+  placeText: String,
+  modelValue: String
 })
+const emit = defineEmits(['update:modelValue'])
+
+const updateValue = (event: any) => {
+  emit('update:modelValue', event.target.value)
+}
+
 </script>
 
 <template>
   <div>
-    <input type="text" :placeholder="props.placeText">
+    <input type="text" :value="modelValue" @input="updateValue" :placeholder="props.placeText">
   </div>
 </template>
 
