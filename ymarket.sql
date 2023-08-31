@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Авг 29 2023 г., 18:58
+-- Время создания: Авг 31 2023 г., 06:06
 -- Версия сервера: 8.0.30
--- Версия PHP: 8.1.9
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- База данных: `ymarket`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `products`
+--
+
+CREATE TABLE `products` (
+  `id` int NOT NULL,
+  `object` text NOT NULL,
+  `price` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -48,11 +60,18 @@ INSERT INTO `users` (`id`, `firstName`, `lastName`, `login`, `password`, `favori
 (11, 'Igor', 'Vanya', 'hui2', 'fd85379917b8b0460c4e01c180ae10395be8265e', NULL, NULL, NULL, NULL),
 (15, 'Igor', 'Vanya', 'hussadasd', 'fd85379917b8b0460c4e01c180ae10395be8265e', NULL, NULL, NULL, NULL),
 (26, 'Igor', 'Vanya', 'TESTYs', 'fd85379917b8b0460c4e01c180ae10395be8265e', NULL, NULL, NULL, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6IlRFU1RZcyIsImlhdCI6MTY5MzE1NDkxMiwiZXhwIjoxNjk1NzQ2OTEyfQ.HxJ_7eRj12S62nGgEemndOD8H1c8MZHuKJVAWNfmV8U'),
-(27, 'Igor', 'Vanya', 'huii', 'aac7e1dfa3952d5099bf6e7db3103154eea9f86e', NULL, NULL, NULL, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Imh1aWkiLCJpYXQiOjE2OTMxNTk0MDcsImV4cCI6MTY5NTc1MTQwN30.AZPe8dm3FkAsge0Mk-6fYxYtrWp3WmMKtd4j4pjRSrQ');
+(27, 'Igor', 'Vanya', 'huii', 'aac7e1dfa3952d5099bf6e7db3103154eea9f86e', NULL, NULL, NULL, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Imh1aWkiLCJpYXQiOjE2OTMxNTk0MDcsImV4cCI6MTY5NTc1MTQwN30.AZPe8dm3FkAsge0Mk-6fYxYtrWp3WmMKtd4j4pjRSrQ'),
+(28, 'Игорь', 'Иванов', 'darklegend', '193b89eba54108283c048679bb1c9117cf4143bd', NULL, NULL, NULL, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImRhcmtsZWdlbmQiLCJpYXQiOjE2OTM0NTAwOTQsImV4cCI6MTY5NjA0MjA5NH0.jdD2axA8e7oyhrXsgccgDNYCzXAF7Nv0T-Fx4zWdhHw');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -65,10 +84,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
