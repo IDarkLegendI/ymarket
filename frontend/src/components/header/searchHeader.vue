@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const clearSearchText = () => {
   if(searchText.value.length > 0) searchText.value = ''
+  inputFocus() // Костыль
 }
 
 const inputFocus = () => {
   document.body.classList.add('searchYes')
 }
-document.body.classList.add('searchYes')
 const inputUnFocus = () => {
   document.body.classList.remove('searchYes')
 }
