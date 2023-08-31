@@ -1,10 +1,11 @@
 import express, { Express, Request, Response } from 'express';
 import {dbRouter} from "./database/db";
 import {Logger} from "./modules/logger";
-import {authRouter} from './routes/authRouter'
+import {authRouter} from './routers/authRouter'
 import bodyParser from "body-parser"
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import {router} from "./routers/router";
 
 const app: Express = express()
 const port = 3003
@@ -16,6 +17,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 app.use('/auth', authRouter)
+app.use('', router)
 
 
 app.get('/api', (req: Request, res: Response) => {
