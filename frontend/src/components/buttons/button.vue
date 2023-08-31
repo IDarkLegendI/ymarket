@@ -46,12 +46,12 @@ button:active{
 
 /*noinspection CssUnusedSymbol*/
 .buttonFind {
-  border: none;
+  border: 2px solid #fc0;
 }
 /*noinspection CssUnusedSymbol*/
 .buttonFind:hover {
   background-color: #fae436;
-  border: none;
+  border: 2px solid #fae436;
 }
 
 .buttonAuth {
