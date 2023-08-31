@@ -5,7 +5,7 @@
         <div style="width: 100%">
           <input type="text" @focus="inputFocus" @blur="inputUnFocus" placeholder="Искать товары" v-model="searchText">
         </div>
-        <button class="buttonClear">
+        <button class="buttonClear" @click="clearSearchText">
             <div class="buttonClearDiv">
           </div>
         </button>
@@ -33,6 +33,10 @@ watch(searchText, async (newSearch) => {
 document.addEventListener("DOMContentLoaded", () => {
   documentButtonClearDiv = document.getElementsByClassName('buttonClearDiv')[0]
 });
+
+const clearSearchText = () => {
+  if(searchText.value.length > 0) searchText.value = ''
+}
 
 const inputFocus = () => {
   document.body.classList.add('searchYes')
