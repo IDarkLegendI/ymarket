@@ -1,10 +1,10 @@
-import {Request, Response } from 'express';
+import {NextFunction, Request, Response} from 'express';
 import {Logger} from "../modules/logger";
 import {dbRouter} from "../database/db";
 import {UserService} from "../services/userService";
 
 export class AuthController {
-	async registration(req: Request, res: Response) {
+	async registration(req: Request, res: Response, next: NextFunction) {
 		try {
 			const {firstName, lastName, login, password} = req.body
 			const userData = await UserService.registration(firstName, lastName, login, password)
@@ -12,11 +12,10 @@ export class AuthController {
 			return res.json(userData)
 		}
 		catch (e) {
-			Logger.log("error", e)
-			res.status(400).json()
+			next(e)
 		}
 	}
-	async login(req: Request, res: Response) {
+	async login(req: Request, res: Response, next: NextFunction) {
 		try {
 			const {login, password} = req.body
 			const userData = await UserService.login(login, password)
@@ -24,12 +23,11 @@ export class AuthController {
 			return res.json(userData)
 		}
 		catch (e) {
-			Logger.log("error", e)
-			res.status(400).json()
+			next(e)
 		}
 	}
 
-	async logout(req: Request, res: Response) {
+	async logout(req: Request, res: Response, next: NextFunction) {
 		try {
 			const {refreshToken} = req.cookies
 			const token = await UserService.logout(refreshToken)
@@ -37,12 +35,11 @@ export class AuthController {
 			return res.json(token)
 		}
 		catch (e){
-			Logger.log("error", e)
-			res.status(400).json()
+			next(e)
 		}
 	}
 
-	async refresh(req: Request, res: Response) {
+	async refresh(req: Request, res: Response, next: NextFunction) {
 		try {
 			const {refreshToken} = req.cookies
 			const userData = await UserService.refresh(refreshToken)
@@ -50,8 +47,7 @@ export class AuthController {
 			return res.json(userData)
 		}
 		catch (e){
-			Logger.log("error", e)
-			res.status(400).json()
+			next(e)
 		}
 	}
 }

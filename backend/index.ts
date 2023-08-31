@@ -6,6 +6,7 @@ import bodyParser from "body-parser"
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import {router} from "./routers/router";
+import {errorMiddleware} from "./middlewares/errorMiddleware";
 
 const app: Express = express()
 const port = 3003
@@ -18,6 +19,7 @@ app.use(cors({
 app.use(cookieParser())
 app.use('/auth', authRouter)
 app.use('', router)
+app.use(errorMiddleware)
 
 
 app.get('/api', (req: Request, res: Response) => {
