@@ -2,7 +2,7 @@
   <div class="main">
     <div class="search-box">
       <div style="width: 100%">
-        <input type="text" @focus="inputFocus" placeholder="Искать товары">
+        <input type="text" @focus="inputFocus" @blur="inputUnFocus" placeholder="Искать товары">
       </div>
       <Button msg="Найти" hoverClass="buttonFind" />
     </div>
@@ -13,6 +13,9 @@
 import Button from "../buttons/button.vue";
 const inputFocus = () => {
   document.body.classList.add('searchYes')
+}
+const inputUnFocus = () => {
+  document.body.classList.remove('searchYes')
 }
 </script>
 
