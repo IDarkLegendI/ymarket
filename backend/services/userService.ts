@@ -3,6 +3,7 @@ import Crypto from "crypto";
 import {UserDto} from "../dto/userdto";
 import {TokenService} from "./tokenService";
 import {ApiError} from "../exceptions/api-error";
+import {ValidService} from "./validService";
 
 export class UserService {
     private static generatePasswordHash (pass: string) {
@@ -14,16 +15,10 @@ export class UserService {
         return this.generatePasswordHash(pass) === hash
     }
 
-    private static isDataValid(data: string)
-    {
-        const re = /[^A-Z-a-z-0-9]/g;
-        return (!re.test(data))
-    }
-
     static async registration(firstName: string, lastName: string, login: string, password: string) {
         let data = await dbRouter.query(`SELECT id FROM users WHERE login = '${login}'`)
         if (data[0]) throw ApiError.BadRequest('Такой аккаунт уже находится в базе данных')
-        if (!this.isDataValid(login) || login.length > 16) throw ApiError.BadRequest('Некорректный логин')
+        if (!ValidService.isDataValid(login) || login.length > 16) throw ApiError.BadRequest('Некорректный логин')
 
         password = this.generatePasswordHash(password)
 
