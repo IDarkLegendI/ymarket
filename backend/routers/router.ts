@@ -1,9 +1,12 @@
 import {Router} from "express";
-import {AuthController} from "../controllers/authController";
-import {RouterController} from "../controllers/routerController";
+import {ProductController} from "../controllers/productController";
 
 export const router = Router()
-const controller = new RouterController()
+const controller = new ProductController()
 
 router.get('/product/:itemId/', controller.product)
-router.get('/business/:itemId/', controller.business)
+// router.get('/business/:itemId/', controller.business)
+// async business(req: Request, res: Response)
+// {
+// 	res.send(req.params);
+// }
