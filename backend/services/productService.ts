@@ -15,4 +15,10 @@ export class ProductService {
 
 		return {...product}
 	}
+
+	static checkInputTextProduct(key: string, text: string)
+	{
+		console.log(`checkInputTextProduct -> key: ${key}; text: ${text}`)
+		// if(text.length < 1) throw ApiError.BadRequest(`Поле ${}`)
+	}
 }

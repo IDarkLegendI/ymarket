@@ -2,6 +2,7 @@ import {NextFunction, Request, Response} from "express";
 import {dbRouter} from "../database/db";
 import {ApiError} from "../exceptions/api-error";
 import {ProductService} from "../services/productService";
+import {body, check} from "express-validator";
 
 export class ProductController {
 	static async getProduct(req: Request, res: Response, next: NextFunction)
@@ -20,8 +21,11 @@ export class ProductController {
 	static async addProduct(req: Request, res: Response, next: NextFunction)
 	{
 		try {
-			const {login, password} = req.body
-			console.log(`body: ${JSON.stringify(req.body)}`)
+			console.log(req.body)
+			const dataKeys = Object.keys(req.body['data'])
+			dataKeys.forEach(key => {
+				ProductService.checkInputTextProduct(key, req.body.data[key])
+			})
 			res.send('addProduct IS WORKING!')
 		}
 		catch (e) {
