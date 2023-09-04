@@ -2,6 +2,7 @@ import {dbRouter} from "../database/db";
 import {ApiError} from "../exceptions/api-error";
 import {ValidService} from "./validService";
 import {ProductDto} from "../dto/productdto";
+import {ProductType} from "../controllers/productController";
 
 export class ProductService {
 	static async get(itemId: string)
@@ -16,9 +17,22 @@ export class ProductService {
 		return {...product}
 	}
 
+	static async add(product: {[index in ProductType]: string})
+	{
+		const data = await dbRouter.query(`INSERT INTO products (name, price, description, specifications, images, business) VALUES 
+												('${product.name}', '${product.price}', '${product.description}', '${product.specifications}', 
+												'${product.images}', '${product.business}')`)
+		if (data === null) throw ApiError.BadRequest(`Ошибка внесения товара ${product.name}`)
+	}
+
+	/**
+	 * Валидация текста обычных, текстовых полей
+	 * @return с убранными пробелами
+	 * */
 	static checkInputTextProduct(key: string, text: string)
 	{
-		console.log(`checkInputTextProduct -> key: ${key}; text: ${text}`)
-		// if(text.length < 1) throw ApiError.BadRequest(`Поле ${}`)
+		if(text.length < 1) throw ApiError.BadRequest(`Поле ${key} пустое`)
+		if(!ValidService.isDataValid(text)) throw ApiError.BadRequest(`Поле ${key} содержит запрещенные символы`)
+		return text.trim()
 	}
 }
