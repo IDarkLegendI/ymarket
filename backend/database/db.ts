@@ -32,6 +32,7 @@ class DBRouter {
 	async query(query: any) {
 		try {
 			const start = new Date().getTime();
+			query = query.replace(/[\r\n\t]+/g, '').trim()
 			const data = await this.dbQuery(query);
 			const time = new Date().getTime() - start;
 			if (time >= 500) {
