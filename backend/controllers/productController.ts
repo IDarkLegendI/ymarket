@@ -4,7 +4,7 @@ import {ApiError} from "../exceptions/api-error";
 import {ProductService} from "../services/productService";
 
 export class ProductController {
-	async product(req: Request, res: Response, next: NextFunction)
+	async getProduct(req: Request, res: Response, next: NextFunction)
 	{
 		try {
 			const {itemId} = req.params
