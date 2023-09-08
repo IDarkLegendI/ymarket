@@ -67,6 +67,10 @@ const breads = [
   outline: 0;
 }
 
+.aBread:hover {
+  background-color: #edece8;
+}
+
 .arrowBread {
   transform: translateY(.5px);
   width: 12px;
