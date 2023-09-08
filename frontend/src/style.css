@@ -154,3 +154,15 @@
     opacity: .6;
     visibility: visible;
 }
+
+ol, ul {
+    list-style: none;
+}
+
+body, li, ol, td, th, ul {
+    padding: 0;
+}
+
+body, dd, dt, li, ol, td, th, ul {
+    margin: 0;
+}

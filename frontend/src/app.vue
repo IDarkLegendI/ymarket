@@ -5,8 +5,11 @@ import DialogCatalog from "./components/dialog/dialogCatalog.vue";
 import AuthModal from "./components/auth/authModal.vue";
 import AuthModalReg from "./components/auth/authModalReg.vue";
 import {useStore} from "./store";
+import ProductPageTitle from "./components/product/productPage.vue";
+import ProductPage from "./components/product/productPage.vue";
 export default {
   components: {
+    ProductPage,
     AuthModalReg,
     AuthModal,
     DialogCatalog,
@@ -29,9 +32,9 @@ export default {
       if(localStorage.getItem('token')) {
         store.checkAuth()
       }
-      else {
-        console.log('hui')
-      }
+      // else {
+      //   console.log('hui')
+      // }
     })
 
     return {
@@ -54,6 +57,7 @@ export default {
   <auth-modal v-if="authToggle"></auth-modal>
   <auth-modal-reg v-if="regToggle"></auth-modal-reg>
   <div class="overlayAuth" v-if="authToggle || regToggle" @click="authToggle = false; regToggle = false"></div>
+  <ProductPage></ProductPage>
 </template>
 
 <style scoped>
