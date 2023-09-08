@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response} from "express";
 import {dbRouter} from "../database/db";
 import {ApiError} from "../exceptions/api-error";
-import {ProductService} from "../services/productService";
+import {ProductEl, ProductService} from "../services/productService";
 
 type ProductType = 'name' | 'price' | 'description' | 'specifications' | 'images' | 'business'
 
@@ -16,27 +16,14 @@ export class ProductController {
 		catch (e) {
 			next(e)
 		}
-		// res.send(req.params);
 	}
 
 	static async addProduct(req: Request, res: Response, next: NextFunction)
 	{
 		try {
 			console.log(req.body)
-			const dataKeys = Object.keys(req.body['product']),
-				product: {[index in ProductType]: string} = {
-				name: "",
-				price: "",
-				description: "",
-				specifications: "",
-				images: "",
-				business: ""
-			}
-			dataKeys.forEach(key =>
-			{
-				ProductService.checkInputTextProduct(key, req.body["product"][key])
-				product[key] = req.body["product"][key]
-			})
+			let product = new ProductEl(req.body.name, req.body.price, req.body.description, req.body.specifications, req.body.images, req.body.business)
+
 
 			await ProductService.add(product)
 			res.send('addProduct IS WORKING!')
