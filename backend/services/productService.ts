@@ -32,6 +32,7 @@ export class ProductService {
 	static checkInputTextProduct(key: string, text: string)
 	{
 		if(text.length < 1) throw ApiError.BadRequest(`Поле ${key} пустое`)
+		if(text.length > 64) throw ApiError.BadRequest(`Поле ${key} содержит слишком большое количество символов`)
 		if(!ValidService.isDataValid(text)) throw ApiError.BadRequest(`Поле ${key} содержит запрещенные символы`)
 		return text.trim()
 	}
