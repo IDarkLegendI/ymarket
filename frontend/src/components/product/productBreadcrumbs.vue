@@ -3,10 +3,10 @@
   <div class="cia-vs" data-zone-name="categoryPath">
     <nav aria-label="Вы здесь">
       <ol class="olBread" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li class="liBread">
+        <li class="liBread" v-for="(bread, index) in breads">
           <div>
-            <a href="/" class="aBread">
-              <span style="font-size: 13px;">Товары для авто- и мототехники</span>
+            <a :href="bread.url" class="aBread">
+              <span style="font-size: 13px;">{{ bread.title }}</span>
               <div style="color:#9E9B98" class="arrowBread">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="#9E9B98">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M4.84853 2L8.69706 5.84853L4.84853 9.69706L4 8.84853L7 5.84853L4 2.84853L4.84853 2Z"
@@ -15,7 +15,7 @@
               </div>
             </a>
           </div>
-          <meta itemprop="position" content="1">
+          <meta itemprop="position" :content="String(index + +1)">
         </li>
       </ol>
     </nav>
@@ -24,7 +24,10 @@
 </template>
 
 <script setup lang="ts">
-
+const breads = [
+  { url: '/', title: 'Товары для авто- и мототехники'},
+  { url: '/', title: 'Автомобильная аудио- и видеотехника'}
+]
 </script>
 
 <style scoped>
