@@ -21,12 +21,12 @@ export class ProductController {
 	static async addProduct(req: Request, res: Response, next: NextFunction)
 	{
 		try {
-			console.log(req.body)
-			let product = new ProductEl(req.body.name, req.body.price, req.body.description, req.body.specifications, req.body.images, req.body.business)
+			let { product } = req.body
+			product = new ProductEl(product.name, product.price, product.description, product.specifications, product.images, product.business)
 
 
 			await ProductService.add(product)
-			res.send('addProduct IS WORKING!')
+			res.send('Продукт добавлен!')
 		}
 		catch (e) {
 			next(e)
