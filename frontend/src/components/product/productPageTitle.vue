@@ -4,8 +4,7 @@
     <!--  [Хлебные крошки] --- [Сравнить] [В избранное]  -->
     <div style="display: block">
       <div style="display: flex">
-        <!--    fDCYe    -->
-        <div class="breadCrumbs">
+        <div class="breadCrumbs">  <!--    fDCYe    -->
           <product-breadcrumbs></product-breadcrumbs>
         </div>
         <div class="buttons">
