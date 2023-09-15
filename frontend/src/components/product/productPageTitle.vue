@@ -17,6 +17,7 @@
           <div class="buttonAction">
             <button class="wishlist">
               <div class="wishlistImg">
+                <!--       For active add class wishlistImgSpanSelected         -->
                 <span class="wishlistImgSpan">
                   <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.58356 0.625916C2.07975 0.625916 0.0500031 2.65565 0.0500031 5.15946C0.0500031 8.60235 2.59794 11.9517 7.58626 15.2497L7.99988 15.5232L8.4135 15.2497C13.402 11.9517 15.95 8.60235 15.95 5.15946C15.95 2.65564 13.9203 0.625916 11.4165 0.625916C10.204 0.625916 9.06034 1.07843 8.00001 1.95835C6.93967 1.07843 5.79599 0.625916 4.58356 0.625916Z">
@@ -149,5 +150,9 @@ import ProductBreadcrumbs from "./productBreadcrumbs.vue";
 
 .wishlistImgSpan svg :first-child {
   fill: #fff;
+}
+
+.wishlistImgSpanSelected svg :first-child, .wishlistImgSpanSelected svg :last-child {
+  fill: red;
 }
 </style>
