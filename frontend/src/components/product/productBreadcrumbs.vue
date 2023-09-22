@@ -6,7 +6,8 @@
         <li class="liBread" v-for="(bread, index) in breads">
           <div>
             <a :href="bread.url" class="aBread">
-              <span style="font-size: 13px;">{{ bread.title }}</span>
+              <!--              14 px-->
+              <span style="font-size: 15px; line-height: 18px; font-weight: 400;">{{ bread.title }}</span>
               <div style="color:#9E9B98" class="arrowBread">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="#9E9B98">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M4.84853 2L8.69706 5.84853L4.84853 9.69706L4 8.84853L7 5.84853L4 2.84853L4.84853 2Z"
@@ -52,9 +53,8 @@ const breads = [
   display: flex;
   align-items: center;
   max-height: 24px;
-  padding: 5px 12px;
-  -moz-column-gap: 3px;
-  column-gap: 3px;
+  padding: 5px 8px;
+  column-gap: 8px;
   border-radius: 7px;
   background-color: #f5f4f2;
   font-size: 13px;
