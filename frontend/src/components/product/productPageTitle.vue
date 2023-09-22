@@ -1,6 +1,6 @@
 <template>
   <!-- BEGIN [product/productPageTitle] -->
-  <div>
+  <div style="margin-bottom: 18px;">
     <!--  [Хлебные крошки] --- [Сравнить] [В избранное]  -->
     <div style="display: block">
       <div style="display: flex">
