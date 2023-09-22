@@ -166,3 +166,7 @@ body, li, ol, td, th, ul {
 body, dd, dt, li, ol, td, th, ul {
     margin: 0;
 }
+
+.pointed {
+    cursor: pointer;
+}

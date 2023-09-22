@@ -1,12 +1,14 @@
 <template>
   <div class="main">
     <product-page-title></product-page-title>
+    <product-summary></product-summary>
   </div>
 </template>
 
 <script setup lang="ts">
 
 import ProductPageTitle from "./productPageTitle.vue";
+import ProductSummary from "./productSummary.vue";
 </script>
 
 <style scoped>
@@ -18,10 +20,10 @@ import ProductPageTitle from "./productPageTitle.vue";
   }
 }
 /*._2-whq */
+/*padding: 0 25px;*/
 .main {
   width: 100%;
   min-width: 1024px;
-  padding: 0 25px;
   margin: 0 auto;
   max-width: 1456px;
 }
